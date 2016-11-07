@@ -9,7 +9,7 @@
 6. **Brugernavn:** EmilJorgensen - Emil Frederik Rune Jørgensen (s153063)
 
 ##Opgavebeskrivelse 
-*Version 06. jan. 2016*
+*Version 7. nov. 2014*
 
 ###Indledning
 IOOuterActive har fået endnu en opgave.
@@ -127,6 +127,7 @@ Endnu et felt hvor der skal betales en afgift til ejeren. Denne gang bestemmes b
 4. Fleet:	4000
 
 ###Bilag 2 - Eksempel på JUnit test
+
 import model.Player;
  
 import org.junit.*;
