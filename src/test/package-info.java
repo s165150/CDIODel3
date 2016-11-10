@@ -1,8 +1,8 @@
 /**
- * Package for main code
+ * Package for test code
  */
 /**
  * @author Morten N
  *
  */
-package main;
+package test;
