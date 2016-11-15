@@ -8,25 +8,41 @@ public class Fleet extends Ownable{
 	private int RENT_4 = 4000;
 	private int ownedFleets = 0;
 	
+	/**
+	 * If the fleet is owned, subtract the rent, corresponding to the number of fleets owned by the owner, from the player, 
+	 * and adds the same amount to the owner.
+	 */
 	public void landOnField(Player player) 
+	{
+		if(owner != null)
+		{
+			player.getAccount().addBalance(-getRent(fleetsOwned(owner)));
+			owner.getAccount().addBalance(getRent(fleetsOwned(owner)));
+		}
+	}
+
+	/**
+	 * @param player The player 
+	 * @return
+	 */
+	public int fleetsOwned(Player player)
 	{
 		
 	}
-
-	public int fleetsOwned(Player player)
-	{
-		switch(player.getFleets)
-			{
-			case 1: return ownedFleets = 1;
-			case 2: return ownedFleets = 2;
-			case 3: return ownedFleets = 3;
-			case 4: return ownedFleets = 4;	
-			}
-	}
-	public int getRent() 
+	
+	/**
+	 * 
+	 * @param owned An integer value representing the number of fleets owned from 1-4
+	 * @return
+	 */
+	public int getRent(int owned) 
 	{
 		int rent = 0;
-		switch(ownedFleets)
+		
+		if(owned <0)
+			System.out.println("ERROR! It is not possible to have less than 0 fleets, check source code!");
+		
+		switch(owned)
 			{
 			case 1: rent = RENT_1;
 			break;
@@ -37,7 +53,11 @@ public class Fleet extends Ownable{
 			case 4: rent = RENT_4;
 			break;
 			}
+		if(owned >4)
+			System.out.println("ERROR! It is not possible to have more than 4 fleets, check source code!");
+		
 		return rent;
+		
 
 	}
 
