@@ -4,24 +4,17 @@ public class LaborCamp extends Ownable {
 	
 	private int baseRent;
 
-	public void landOnField(Player player) {
-		// TODO Auto-generated method stub
+	public void landOnField(Player player) 
+	{
 		
 	}
 
-	public void getFieldDescription() {
-		// TODO Auto-generated method stub
-		
+	@Override
+	int getRent() 
+	{
+		return baseRent;
 	}
 
-	public void getFieldPicture() {
-		// TODO Auto-generated method stub
-		
-	}
 
-	public void getRent(int number) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

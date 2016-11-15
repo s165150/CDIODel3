@@ -1,35 +1,18 @@
 package game;
 
-public class Tax implements Field {
+public class Tax extends Field {
 	
-	private String fieldDescription;
-	private String fieldPicture;
-	private String fieldTitle;
 	private int taxAmount;
 	private int taxRate = -1;
 
-	public void landOnField(Player player) {
-		// TODO Auto-generated method stub
+	public void landOnField(Player player) 
+	{
 		
 	}
 	
-	Tax(String title, String description,String picture, int price)
+	public void setTaxAmount(int amount)
 	{
-		fieldTitle = title;
-		fieldDescription = description;
-		fieldPicture = picture;
+		taxAmount = amount;
 	}
 
-
-	public String getFieldDescription() {
-		return fieldDescription;
-	}
-
-	public String getFieldPicture() {
-		return fieldPicture;
-	}
-	
-	public String getFieldTitle() {
-		return fieldTitle;
-	}
 }
