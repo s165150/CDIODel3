@@ -1,5 +1,7 @@
 package game;
 
+import java.awt.Color;
+
 public class Fleet extends Ownable{
 	
 	private int RENT_1 = 500;
@@ -7,58 +9,91 @@ public class Fleet extends Ownable{
 	private int RENT_3 = 2000;
 	private int RENT_4 = 4000;
 	private int ownedFleets = 0;
+	private String fieldTitle, fieldDescription, fieldSubText, fieldPicture;
+	private Color bgColor;
+	int owner;
 	
-	/**
-	 * If the fleet is owned, subtract the rent, corresponding to the number of fleets owned by the owner, from the player, 
-	 * and adds the same amount to the owner.
-	 */
-	public void landOnField(Player player) 
+	Fleet(String title, String description, String subText, String picture, Color color, int playerNumber)
 	{
-		if(owner != null)
-		{
-			player.getAccount().addBalance(-getRent(fleetsOwned(owner)));
-			owner.getAccount().addBalance(getRent(fleetsOwned(owner)));
-		}
-	}
-
-	/**
-	 * @param player The player 
-	 * @return
-	 */
-	public int fleetsOwned(Player player)
-	{
-		
+		fieldTitle = title;
+		fieldDescription = description;
+		fieldSubText = subText;
+		fieldPicture = picture;
+		bgColor = color;
+		owner = playerNumber;
 	}
 	
-	/**
-	 * 
-	 * @param owned An integer value representing the number of fleets owned from 1-4
-	 * @return
-	 */
-	public int getRent(int owned) 
-	{
-		int rent = 0;
+	@Override
+	public void setFieldTitle(String text) {
+		fieldTitle = text;
 		
-		if(owned <0)
-			System.out.println("ERROR! It is not possible to have less than 0 fleets, check source code!");
-		
-		switch(owned)
-			{
-			case 1: rent = RENT_1;
-			break;
-			case 2: rent = RENT_2;
-			break;
-			case 3: rent = RENT_3;
-			break;
-			case 4: rent = RENT_4;
-			break;
-			}
-		if(owned >4)
-			System.out.println("ERROR! It is not possible to have more than 4 fleets, check source code!");
-		
-		return rent;
-		
-
 	}
 
+	@Override
+	public void setFieldSubText(String text) {
+		fieldSubText = text;
+		
+	}
+
+	@Override
+	public void setFieldDescription(String text) {
+		fieldDescription = text;
+		
+	}
+
+	@Override
+	public void setFieldPicture(String text) {
+		fieldPicture = text;
+		
+	}
+
+	@Override
+	public void setBgColor(Color color) {
+		bgColor = color;
+		
+	}
+
+	@Override
+	public String getFieldTitle() {
+		
+		return fieldTitle;
+	}
+
+	@Override
+	public String getFieldSubText() {
+		// TODO Auto-generated method stub
+		return fieldSubText;
+	}
+
+	@Override
+	public String getFieldDescription() {
+		// TODO Auto-generated method stub
+		return fieldDescription;
+	}
+
+	@Override
+	public String getFieldPicture() {
+		// TODO Auto-generated method stub
+		return fieldPicture;
+	}
+
+	@Override
+	public Color getBgColor() {
+		// TODO Auto-generated method stub
+		return bgColor;
+	}
+
+	@Override
+	int getRent() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void landOnField(Player player) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 }

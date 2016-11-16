@@ -2,60 +2,27 @@ package game;
 
 import java.awt.Color;
 
-public abstract class Field {
-	
-	//Attributes
-	protected String fieldTitle = null;
-	protected String fieldSubText = null;
-	protected String fieldDescription = null;
-	protected String fieldPicture = null;
-	protected Color  fieldBgColor = null;
-	
+public interface Field {
+	/**
+	 * Yessir, det her er så vores interface, det er lavet så vi (hvis vi ønsker senere hen) har nemmere ved at huske hvad der skal i de forskellige typer af fields.
+	 * @param player
+	 */
 	//Methods
 	abstract void landOnField(Player player);
 	
 		//Set methods
-		void setFieldTitle(String text)
-		{
-			fieldTitle = text;
-		}
-		void setFieldSubText(String text)
-		{
-			fieldSubText = text;
-		}
-		void setFieldDescription(String text)
-		{
-			fieldDescription = text;
-		}
-		void setFieldPicture(String text)
-		{
-			fieldPicture = text;
-		}
-		void setBgColor(Color color)
-		{
-			fieldBgColor = color;
-		}
+		void setFieldTitle(String text);
+		void setFieldSubText(String text);
+		void setFieldDescription(String text);
+		void setFieldPicture(String text);
+		void setBgColor(Color color);
 		
 		//Get methods
-		String getFieldTitle()
-		{
-			return fieldTitle;
-		}
-		String getFieldSubText()
-		{
-			return fieldSubText;
-		}
-		String getFieldDescription()
-		{
-			return fieldDescription;
-		}
-		String getFieldPicture()
-		{
-			return fieldPicture;
-		}
-		Color  getBgColor()
-		{
-			return fieldBgColor;
-		}
+		String getFieldTitle();
+		String getFieldSubText();
+		String getFieldDescription();
+		String getFieldPicture();
+		Color  getBgColor();
+
 
 }

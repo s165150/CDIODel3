@@ -1,30 +1,27 @@
 package game;
 
-public abstract class Ownable extends Field{
+public abstract class Ownable implements Field{
 	
 	protected int price;
-	protected Player owner;
+	public int owner;
 	
-	//Methods
-	abstract int getRent();
+		//Methods
+		abstract int getRent();
 	
 		//Set methods
-		void setOwner(Player player)
-		{
-			this.owner = player;
-		}
 		void setprice(int amount)
 		{
 			this.price = amount;
 		}
 	
 		//Get methods
-		Player getOwner()
-		{
-			return this.owner;
-		}
+
 		int getPrice()
 		{
 			return this.price;
+		}
+		void setFieldOwner(int value)
+		{
+			owner = value;
 		}
 }
