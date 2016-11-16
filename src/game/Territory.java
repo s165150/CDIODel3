@@ -1,42 +1,94 @@
 package game;
 
-public class Territory extends Ownable {
-	private String fieldDescription;
-	private String fieldPicture;
-	private String fieldTitle;
-	private int rent;
+import java.awt.Color;
 
-	public void landOnField(Player player) {
-		
-		
-	}
+public class Territory extends Ownable {
 	
-	Territory(String title, String description,String picture, int price)
+	private String fieldTitle, fieldDescription, fieldSubText, fieldPicture;
+	private Color bgColor;
+	int owner;
+	private int rent;
+	
+	Territory(String title, String description, String subText, String picture, Color color, int playerNumber)
 	{
 		fieldTitle = title;
 		fieldDescription = description;
+		fieldSubText = subText;
 		fieldPicture = picture;
-		rent = price;
+		bgColor = color;
+		owner = playerNumber;
 	}
-
-	public String getFieldDescription() {
-		return fieldDescription;
+	
+	@Override
+	public void setFieldTitle(String text) {
+		fieldTitle = text;
 		
 	}
 
-	public String getFieldPicture() {
-		return fieldPicture;
+	@Override
+	public void setFieldSubText(String text) {
+		fieldSubText = text;
 		
 	}
 
-	public int getRent(int number) {
-		return rent;
-		
+	@Override
+	public void setFieldDescription(String text) {
+		fieldDescription = text;
 		
 	}
 
+	@Override
+	public void setFieldPicture(String text) {
+		fieldPicture = text;
+		
+	}
+
+	@Override
+	public void setBgColor(Color color) {
+		bgColor = color;
+		
+	}
+
+	@Override
 	public String getFieldTitle() {
+		
 		return fieldTitle;
 	}
 
+	@Override
+	public String getFieldSubText() {
+		// TODO Auto-generated method stub
+		return fieldSubText;
+	}
+
+	@Override
+	public String getFieldDescription() {
+		// TODO Auto-generated method stub
+		return fieldDescription;
+	}
+
+	@Override
+	public String getFieldPicture() {
+		// TODO Auto-generated method stub
+		return fieldPicture;
+	}
+
+	@Override
+	public Color getBgColor() {
+		// TODO Auto-generated method stub
+		return bgColor;
+	}
+
+	@Override
+	int getRent() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void landOnField(Player player) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }
