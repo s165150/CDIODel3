@@ -9,13 +9,14 @@ public class Tax implements Field {
 	private int taxAmount;
 	private int taxRate = -1;
 
-	Tax(String title, String description, String subText, String picture, Color color)
+	Tax(String title, String description, String subText, String picture, Color color, int amount)
 	{
 		fieldTitle = title;
 		fieldDescription = description;
 		fieldSubText = subText;
 		fieldPicture = picture;
 		bgColor = color;
+		taxAmount = amount;
 	}
 	
 	@Override
