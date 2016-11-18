@@ -84,7 +84,7 @@ public class Territory extends Ownable {
 			return rent;
 		}
 		@Override
-		public void landOnField(Player player) 
+		public void landOnField(GameBoard game) 
 		{
 			if(owner != 0 && != player.getPlayerNumber())
 			{

@@ -8,7 +8,7 @@ public interface Field {
 	 * @param player
 	 */
 	//Methods
-	abstract void landOnField(Player player);
+	abstract void landOnField(GameBoard game);
 	
 		//Set methods
 		void setFieldTitle(String text);

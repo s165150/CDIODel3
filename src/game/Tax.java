@@ -100,7 +100,7 @@ public class Tax implements Field {
 		}
 		
 	@Override
-	public void landOnField(Player player) 
+	public void landOnField(GameBoard game) 
 	{
 		boolean taxChoice = false;
 			if(taxRate == 0)

@@ -89,7 +89,7 @@ public class Refuge implements Field{
 		}
 
 	@Override
-	public void landOnField(Player player) 
+	public void landOnField(GameBoard game) 
 	{
 		player.getAccount().addBalance(bonus);
 	}
