@@ -3,8 +3,12 @@ package game;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+
 
 public class GameBoard {
+
+	Scanner input = new Scanner(System.in);
 	
 	ArrayList<Field> boardFields = new ArrayList<Field>();
 	public void createGameBoard()
@@ -30,5 +34,28 @@ public class GameBoard {
 		boardFields.add(new Fleet("Sea Grover", "Description", "4000", "picturepath", Color.GREEN, 0, 4000));
 		boardFields.add(new Fleet("The Buccaneers", "Description", "4000", "picturepath", Color.GREEN, 0, 4000));
 		boardFields.add(new Fleet("Privateer Armada", "Description", "4000", "picturepath", Color.GREEN, 0, 4000));
+	}
+
+	ArrayList<Player> playerList = new ArrayList<Player>();
+	int numOfPlayers;
+	public void createPlayerList(Scanner input)
+	{
+	System.out.print("How many players are in this game?");
+	numOfPlayers = input.nextInt();
+	input.nextLine();
+	if (numOfPlayers < 2 || numOfPlayers > 6)
+	{
+		throw new IllegalArgumentException();
+	}
+
+
+	for(int i = 0; i < numOfPlayers; i++)
+	{
+	    System.out.print("What is Player " + (i + 1) + " name?");
+	    String name = input.nextLine();
+	    Player plr = new Player(name, i);
+	    plr.setPlayerName(name);
+	    playerList.add(plr);
+	}
 	}
 }

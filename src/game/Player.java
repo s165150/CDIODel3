@@ -8,18 +8,25 @@ public class Player {
 
 	private String playerName;
 	private Account playerAccount;
+	private int playerNumber;
 	
 	/**
 	 * Creates the constructor
 	 * @param name Reserves space for the player's name.
 	 * @param Account creates the instance of an Account within the player object.
 	 */
-	public Player (String name)
+	public Player (String name, int number)
 	{
 		playerName = name;
 		playerAccount = new Account();
+		playerNumber = number;
 	}
 
+	
+	public void setPlayerName(String name)
+	{
+		playerName = name;
+	}
 	/**
 	 * Returns the player's name.
 	 * @return
@@ -36,6 +43,16 @@ public class Player {
 	public Account getAccount()
 	{
 		return playerAccount;
+	}
+	
+	public void setPlayerNumber(int value)
+	{
+		playerNumber = value;
+	}
+	
+	public int getPlayerNumber()
+	{
+		return playerNumber;
 	}
 	
 	/**
