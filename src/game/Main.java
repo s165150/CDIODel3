@@ -1,16 +1,19 @@
 package game;
 
 import java.util.Scanner;
-
+import game.MUI;
 public class Main {
 
 	public static void main(String[] args) {
 		
 		Scanner input = new Scanner(System.in);
 		GameBoard game = new GameBoard();
-		game.createPlayerList(input);
-		
-		System.out.println(game.playerList.get(0).getPlayerNumber() + game.playerList.get(0).getPlayerName());
+		MUI mui = new MUI();
+		//game.createGameBoard();
+		mui.createBoard(game);
+		//game.createPlayerList(input);
+		mui.getUserString("Message");
+		//System.out.println(game.playerList.get(0).getPlayerNumber() + game.playerList.get(0).getPlayerName());
 		
 		
 //		System.out.println(game.playerList.get(0).getPlayerName());

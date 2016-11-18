@@ -83,22 +83,22 @@ public class Territory extends Ownable {
 		{
 			return rent;
 		}
-		@Override
-		public void landOnField(GameBoard game) 
-		{
-			if(owner != 0 && game.boardFields.get(game.playerList.get)!= player.getPlayerNumber())
-			{
-				player.getAccount().addBalance(-rent);
-				owner.getAccount().addBalance(rent);
-			}
-			else if (owner == 0 ∣∣ != player.getPlayerNumber())
-			{
-				if(få svar == true)
-				{
-					player.getAccount().addBalance(-price);
-					this.owner = player.getPlayerNumber();
-				}
-				
-		}
+//		@Override
+//		public void landOnField(GameBoard game) 
+//		{
+//			if(owner != 0 && game.boardFields.get(game.playerList.get)!= player.getPlayerNumber())
+//			{
+//				player.getAccount().addBalance(-rent);
+//				owner.getAccount().addBalance(rent);
+//			}
+//			else if (owner == 0 ∣∣ != player.getPlayerNumber())
+//			{
+//				if(få svar == true)
+//				{
+//					player.getAccount().addBalance(-price);
+//					this.owner = player.getPlayerNumber();
+//				}
+//				
+//		}
 	
 }
