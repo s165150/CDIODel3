@@ -4,14 +4,6 @@ import java.awt.Color;
 
 public class Fleet extends Ownable{
 	
-	private int RENT_1 = 500;
-	private int RENT_2 = 1000;
-	private int RENT_3 = 2000;
-	private int RENT_4 = 4000;
-	private int ownedFleets = 0;
-	private String fieldTitle, fieldDescription, fieldSubText, fieldPicture;
-	private Color bgColor;
-	
 	/**
 	 * Contructs a field of the Fleet type.
 	 * If owned by a player all other players must pay a amount according to the number of Fleet fields owned by the owner.
@@ -23,16 +15,15 @@ public class Fleet extends Ownable{
 	 * @param player Number The number (integer) of the player who owns the field
 	 * @param cost The buy price of the field
 	 */
-	Fleet(String title, String description, String subText, String picture, Color color, int playerNumber,int cost)
-	{
-		fieldTitle = title;
-		fieldDescription = description;
-		fieldSubText = subText;
-		fieldPicture = picture;
-		bgColor = color;
-		owner = playerNumber;
-		price = cost;
+	Fleet(String title, String description, String subText, String picture, Color color, int playerNumber, int cost) {
+		super(title, description, subText, picture, color, playerNumber, cost);
 	}
+
+	private int RENT_1 = 500;
+	private int RENT_2 = 1000;
+	private int RENT_3 = 2000;
+	private int RENT_4 = 4000;
+	private int ownedFleets = 0;
 	
 		//Set methods
 		@Override

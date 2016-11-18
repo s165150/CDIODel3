@@ -4,11 +4,6 @@ import java.awt.Color;
 
 public class Territory extends Ownable {
 	
-	//Attributes
-	private String fieldTitle, fieldDescription, fieldSubText, fieldPicture;
-	private Color bgColor;
-	private int rent;
-	
 	/**
 	 * Contructs a field of the Territory type. If owned by a player all other players must pay a fixed rent to land on the field.
 	 * @param title The title of the field
@@ -20,17 +15,15 @@ public class Territory extends Ownable {
 	 * @param cost The buy price of the field
 	 * @param payamount The price of landing on the field if owned
 	 */
-	Territory(String title, String description, String subText, String picture, Color color, int playerNumber,int cost, int payamount)
+	Territory(String title, String description, String subText, String picture, Color color, int playerNumber,
+			int cost,int rent) 
 	{
-		fieldTitle = title;
-		fieldDescription = description;
-		fieldSubText = subText;
-		fieldPicture = picture;
-		bgColor = color;
-		owner = playerNumber;
-		price = cost;
-		rent = payamount;
+		super(title, description, subText, picture, color, playerNumber, cost);
+		this.rent=rent;
 	}
+	
+	//Attributes
+	private int rent;
 	
 		//Set methods
 		@Override

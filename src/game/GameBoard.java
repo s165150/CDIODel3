@@ -28,8 +28,8 @@ public class GameBoard {
 		boardFields.add(new Refuge("Monestary", "Description", "500", "picturepath", Color.GREEN, 500));
 		boardFields.add(new LaborCamp("Hut In The Mountain", "Description", "2500", "picturepath", Color.GREEN, 0 , 2500, 100));
 		boardFields.add(new LaborCamp("Dachau", "Description", "2500", "picturepath", Color.GREEN, 0 , 2500, 100));
-		boardFields.add(new Tax("Goldmine", "Description", "2000", "picturepath", Color.GREEN, 2000));
-		boardFields.add(new Tax("Caravan", "Description", "4000 or 10%", "picturepath", Color.GREEN, 4000));
+		boardFields.add(new Tax("Goldmine", "Description", "2000", "picturepath", Color.GREEN, 2000,0));
+		boardFields.add(new Tax("Caravan", "Description", "4000 or 10%", "picturepath", Color.GREEN, 4000,0.10));
 		boardFields.add(new Fleet("Second Sail", "Description", "4000", "picturepath", Color.GREEN, 0, 4000));
 		boardFields.add(new Fleet("Sea Grover", "Description", "4000", "picturepath", Color.GREEN, 0, 4000));
 		boardFields.add(new Fleet("The Buccaneers", "Description", "4000", "picturepath", Color.GREEN, 0, 4000));

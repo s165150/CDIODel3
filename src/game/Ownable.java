@@ -1,14 +1,31 @@
 package game;
 
+import java.awt.Color;
+
 public abstract class Ownable implements Field{
 	
 		//Attributes
+		protected String fieldTitle;
+		protected String fieldDescription;
+		protected String fieldSubText;
+		protected String fieldPicture;
+		protected Color bgColor;
 		protected int price;
 		public int owner;
 	
 		//Methods		
 		abstract int getRent();
 	
+		Ownable(String title, String description, String subText, String picture, Color color, int playerNumber, int cost)
+		{
+			fieldTitle = title;
+			fieldDescription = description;
+			fieldSubText = subText;
+			fieldPicture = picture;
+			bgColor = color;
+			owner = playerNumber;
+			price = cost;
+		}
 			//Set methods
 			void setprice(int amount)
 			{

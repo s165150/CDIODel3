@@ -4,10 +4,6 @@ import java.awt.Color;
 
 public class LaborCamp extends Ownable {
 	
-	private String fieldTitle, fieldDescription, fieldSubText, fieldPicture;
-	private Color bgColor;
-	private int baseRent;
-
 	/**
 	 * Contructs a field of the LabourCamp type.
 	 * If owned by a player all other players must pay a amount calculated by rolling the dice and multiplying the roll with the baseRent
@@ -21,17 +17,13 @@ public class LaborCamp extends Ownable {
 	 * @param cost The buy price of the field
 	 * @param payamount The price of landing on the field if owned
 	 */
-	LaborCamp(String title, String description, String subText, String picture, Color color, int playerNumber,int cost, int payamount)
+	LaborCamp(String title, String description, String subText, String picture, Color color, int playerNumber,
+			int cost,int rent) 
 	{
-		fieldTitle = title;
-		fieldDescription = description;
-		fieldSubText = subText;
-		fieldPicture = picture;
-		bgColor = color;
-		owner = playerNumber;
-		price = cost;
-		baseRent = payamount;
+		super(title, description, subText, picture, color, playerNumber, cost);
+		baseRent = rent;
 	}
+	private int baseRent;
 	
 		//Set methods
 		@Override
