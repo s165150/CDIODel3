@@ -24,5 +24,4 @@ public interface Field {
 		String getFieldPicture();
 		Color  getBgColor();
 
-
 }
