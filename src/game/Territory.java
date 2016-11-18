@@ -86,7 +86,7 @@ public class Territory extends Ownable {
 		@Override
 		public void landOnField(GameBoard game) 
 		{
-			if(owner != 0 && != player.getPlayerNumber())
+			if(owner != 0 && game.boardFields.get(game.playerList.get)!= player.getPlayerNumber())
 			{
 				player.getAccount().addBalance(-rent);
 				owner.getAccount().addBalance(rent);

@@ -53,8 +53,7 @@ public class GameBoard {
 	{
 	    System.out.print("What is Player " + (i + 1) + " name?");
 	    String name = input.nextLine();
-	    Player plr = new Player(name, i);
-	    plr.setPlayerName(name);
+	    Player plr = new Player(name, i+1);
 	    playerList.add(plr);
 	}
 	}

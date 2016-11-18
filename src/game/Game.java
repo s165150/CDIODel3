@@ -1,6 +1,65 @@
 package game;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Game {
 	
+	Scanner input = new Scanner(System.in);
+	String name1, name2, name3, name4, name5, name6;
+	Player player1, player2, player3, player4, player5, player6;
+	int numOfPlayers;
+
+	
+	public void createPlayers()
+	{
+		System.out.print("How many players are in this game?");
+		numOfPlayers = input.nextInt();
+		input.nextLine();
+		if (numOfPlayers < 2 || numOfPlayers > 6)
+		{
+			throw new IllegalArgumentException();
+		}
+	if (numOfPlayers < 7)
+	{
+		Player player1 = new Player(name1, 1);
+		System.out.println("Enter player1's name");
+		name1 = input.nextLine();
+		Player player2 = new Player(name2, 2);
+		System.out.println("Enter player2's name");
+		name2 = input.nextLine();
+		if (numOfPlayers > 2 && numOfPlayers < 7)
+		{
+			new Player(name3, 7);
+			System.out.println("Enter player3's name");
+			name3 = input.nextLine();
+			if (numOfPlayers > 3 && numOfPlayers < 7)
+			{
+				new Player(name4, 4);
+				System.out.println("Enter player4's name");
+				name4 = input.nextLine();
+				if (numOfPlayers > 4 && numOfPlayers < 7)
+				{
+					new Player(name5, 5);
+					System.out.println("Enter player5's name");
+					name5 = input.nextLine();
+					if (numOfPlayers > 5 && numOfPlayers < 7)
+					{
+						new Player(name6, 6);
+						System.out.println("Enter player6's name");
+						name6 = input.nextLine();
+					}
+				}
+			}
+		}
+		System.out.println(player1);
+		System.out.println(player2);
+		System.out.println(player3);
+		System.out.println(player4);
+		System.out.println(player5);
+		System.out.println(player6);
+	}
+	}
 
 	
 //	private Text text = new Text();
