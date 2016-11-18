@@ -30,6 +30,10 @@ public int addBalance(int point)
 	return Balance;
 }
 
+public void setBalance(int balance)
+{
+	Balance = balance;
+}
 /**
  * Returns the player's current balance.
  * @return Balance

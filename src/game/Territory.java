@@ -93,7 +93,19 @@ public class Territory extends Ownable {
 		@Override
 		public void landOnField(Player player) 
 		{
-			
+			if(owner != 0 && != player.getPlayerNumber())
+			{
+				player.getAccount().addBalance(-rent);
+				owner.getAccount().addBalance(rent);
+			}
+			else if (owner == 0 ∣∣ != player.getPlayerNumber())
+			{
+				if(få svar == true)
+				{
+					player.getAccount().addBalance(-price);
+					this.owner = player.getPlayerNumber();
+				}
+				
 		}
 	
 }

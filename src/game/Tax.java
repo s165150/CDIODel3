@@ -7,7 +7,7 @@ public class Tax implements Field {
 	private String fieldTitle, fieldDescription, fieldSubText, fieldPicture;
 	private Color bgColor;
 	private int taxAmount;
-	private int taxRate = -1;
+	private double taxRate;
 	/**
 	 * Construcs a field of the Tax type.
 	 * When a player lands on a tax field, they must pay a fixed taxAmount to the bank, OR choose to pay 10% of their assets to the bank.
@@ -18,7 +18,7 @@ public class Tax implements Field {
 	 * @param color The background color of the field, is only shown if no/transparent picture is chosen
 	 * @param amount The fixed tax amount to be payed
 	 */
-	Tax(String title, String description, String subText, String picture, Color color, int amount)
+	Tax(String title, String description, String subText, String picture, Color color, int amount,double rate)
 	{
 		fieldTitle = title;
 		fieldDescription = description;
@@ -26,6 +26,7 @@ public class Tax implements Field {
 		fieldPicture = picture;
 		bgColor = color;
 		taxAmount = amount;
+		taxRate = rate;
 	}
 	
 		//Set methods
@@ -58,6 +59,10 @@ public class Tax implements Field {
 		{
 			taxAmount = amount;
 		}
+		public void setTaxRate(int rate)
+		{
+			taxRate = rate;
+		}
 
 		//Get methods
 		@Override
@@ -89,11 +94,36 @@ public class Tax implements Field {
 		{
 			return taxAmount;
 		}
+		double getTaxRate()
+		{
+			return taxRate;
+		}
 		
 	@Override
 	public void landOnField(Player player) 
 	{
-			
+		boolean taxChoice = false;
+			if(taxRate == 0)
+			{
+				taxChoice = false;
+				player.getAccount().addBalance(-taxAmount);
+			}
+			else if (taxRate != 0)
+			{
+				taxChoice = true;
+			}
+	}
+
+	public void landOnField(Player player, boolean choice)
+	{
+		if(choice == true)
+		{
+			player.getAccount().addBalance(-taxAmount);
+		}
+		else if (choice == false)
+		{
+			player.getAccount().setBalance((int)(player.getAccount().getBalance()*(100-taxRate)));
+		}
 	}
 
 }
