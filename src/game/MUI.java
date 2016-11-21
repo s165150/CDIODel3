@@ -40,6 +40,12 @@ public class MUI {
 	GUI.create(fields);
 	}
 	
+	public void playTurn(GameBoard game, int v, Shaker shaker)
+	{
+		removeCar(game, v);
+		setCar(game, v);
+		setDice(shaker);
+	}
 	/**
 	 * Displays a message to the user and awaits a response
 	 * @param msg The message shown to the user
@@ -63,18 +69,18 @@ public class MUI {
 	 * Adds a player to the board
 	 * @param color The color of the players car
 	 */
-	void addPlayer(Player player,Color color)
+	void addPlayer(GameBoard game, int v)
 	{
-		Car car = new Car.Builder().secondaryColor(color).build();
-		GUI.addPlayer(player.getPlayerName(), player.getAccount().getBalance(),car);
+		Car car = new Car.Builder().build();
+		GUI.addPlayer(game.playerList.get(v).getPlayerName(), game.playerList.get(v).getAccount().getBalance(),car);
 	}
 	
 	/**
 	 * Shows the Balance of a player on the board
 	 */
-	public void setBalance(Player player)
+	public void setBalance(GameBoard game, int v)
 	{
-		GUI.setBalance(player.getPlayerName(), player.getAccount().getBalance());
+		GUI.setBalance(game.playerList.get(v).getPlayerName(), game.playerList.get(v).getAccount().getBalance());
 	}
 	
 	/**
@@ -88,25 +94,25 @@ public class MUI {
 	/**
 	 * Sets a car on a given field position (-1) on the board
 	 */
-	void setCar(Player player,Shaker shaker)
+	void setCar(GameBoard game, int v)
 	{
-		GUI.setCar(shaker.getShake()+1, player.getPlayerName());
+		GUI.setCar(game.playerList.get(v).getPosition(), game.playerList.get(v).getPlayerName());
 	}
 	
 	/**
 	 * 
 	 * sets the car on the start field again.
 	 */
-	public void setCarOnStart(Player player)
+	public void setCarOnStart(GameBoard game, int v)
 	{
-		GUI.setCar(1, player.getPlayerName());
+		GUI.setCar(1, game.playerList.get(v).getPlayerName());
 	}
 	/**
 	 * Removes a car on a given field position (-1) on the board
 	 */
-	private void removeCar(Player player)
+	public void removeCar(GameBoard game, int v)
 	{
-		GUI.removeAllCars(player.getPlayerName());
+		GUI.removeAllCars(game.playerList.get(v).getPlayerName());
 	}
 	
 	/**

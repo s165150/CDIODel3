@@ -56,9 +56,9 @@ public class Player {
 	{
 		return playerNumber;
 	}
-	public void setPosition(Shaker shake)
+	public void setPosition(int v)
 	{
-		position = shake.getShake() + position;
+		position = v + position;
 		if (position > 20)
 		{
 			position = position - 20;

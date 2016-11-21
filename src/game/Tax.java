@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.Color;
+import java.util.Scanner;
 
 public class Tax implements Field {
 	
@@ -99,31 +100,23 @@ public class Tax implements Field {
 			return taxRate;
 		}
 		
+		Scanner input = new Scanner(System.in);
 	@Override
-	public void landOnField(GameBoard game) 
-	{
-		boolean taxChoice = false;
-			if(taxRate == 0)
-			{
-				taxChoice = false;
-				player.getAccount().addBalance(-taxAmount);
-			}
-			else if (taxRate != 0)
-			{
-				taxChoice = true;
-			}
+	public void landOnField(GameBoard game, int v, int p) {
 	}
 
-	public void landOnField(Player player, boolean choice)
-	{
-		if(choice == true)
-		{
-			player.getAccount().addBalance(-taxAmount);
-		}
-		else if (choice == false)
-		{
-			player.getAccount().setBalance((int)(player.getAccount().getBalance()*(100-taxRate)));
-		}
-	}
+//	{
+//		System.out.println("Press 1 to pay" + ((Tax)game.boardFields.get(v)).getTaxRate() + " or press 2 to pay 10% of your total assets");
+//			int a = input.nextInt();
+//		if(a == 1)
+//			{
+//				game.playerList.get(v).getAccount().addBalance(-taxAmount);
+//			}
+//			else if (a == 2)
+//			{
+//				game.playerList.get(v).getAccount().addBalance((int) -(game.playerList.get(v).getAccount().getBalance()*taxRate)); //AMEN FORHELVED. Ingen af kaldene virker...
+//			}
+//	}
+
 
 }

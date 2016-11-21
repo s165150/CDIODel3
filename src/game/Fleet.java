@@ -97,7 +97,7 @@ public class Fleet extends Ownable{
 		}
 		
 	@Override
-	public void landOnField(GameBoard game) 
+	public void landOnField(GameBoard game, int b, int p) 
 	{
 			
 	}
