@@ -22,7 +22,7 @@ public class GameBoard {
 		boardFields.add(new Territory("The Warewall", "A wall of warewolfs... I think.", "4300", "icons/Warewall.png", Color.WHITE, 10, 4300, 1300));
 		boardFields.add(new Territory("Mountain Village", "A small settlement in the mountainous region", "4700", "icons/Mountain_Village.png", Color.WHITE, 10, 4700, 1600));
 		boardFields.add(new Territory("South Citadel", "A vast fort ment to protect the Capitol", "5000", "icons/South_Citadel.png", Color.WHITE, 10, 5000, 2000));
-		boardFields.add(new Territory("Palace gates", "All those who wish to enter the Capt", "5500", "icons/Palace_Gates.png", Color.WHITE, 10, 5500, 2600));
+		boardFields.add(new Territory("Palace gates", "All those who wish to enter the Capitol pass through here", "5500", "icons/Palace_Gates.png", Color.WHITE, 10, 5500, 2600));
 		boardFields.add(new Territory("Tower", "One of the major defences of the Castle", "6000", "icons/Tower.png", Color.WHITE, 10, 6000, 3200));
 		boardFields.add(new Territory("Castle", "The kings castle, the largest building in the Capitol!", "8000", "icons/Castle.png", Color.WHITE, 10, 8000, 4000));
 		boardFields.add(new Refuge("Walled City", "A refuge for everyone trapped in the wasteland", "5000", "icons/Walled_City.png", Color.GREEN, 5000));

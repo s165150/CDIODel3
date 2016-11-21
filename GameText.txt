@@ -1,0 +1,48 @@
+Welcome message:
+1
+
+Titles:
+Tribe Encampment
+Crater
+Mountain
+Cold Desert
+Black Cave
+The Warewall
+Mountain Village
+South Citadel
+Palace Gates
+Tower
+Castle
+Walled City
+Monastery
+Huts In The Mountain
+The Pit
+Goldmine
+Caravan
+Second Sail
+Sea Grover
+The Buccaneers
+Privateer Armada
+
+Descriptions:
+A vild and primitive place
+Is there even a bottom?
+Taller than the eye can see!
+A vast and endless desert of ice
+I wonder what awaits everyone who dare enter
+A wall of warewolfs... I think.
+A small settlement in the mountainous region
+A vast fort ment to protect the Capitol
+All those who wish to enter the Capitol pass through here
+One of the major defences of the Castle
+The kings castle, the largest building in the Capitol!
+A refuge for everyone trapped in the wasteland
+An offer of peace for everyone in a wild reality
+A settlement of savages
+A vast slavecamp
+The main source of income for the kingdom
+A passing by traders caravan, suppling goods to the whole kingdom
+A major corvette, ment for escorting tradeships
+A large trading ship!
+A fleet of small raiding ships
+A fleet of warships, ment for procection of the realm.
