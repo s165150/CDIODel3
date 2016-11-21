@@ -9,7 +9,6 @@ import desktop_codebehind.Car;
 import desktop_fields.Refuge;
 import desktop_fields.Field;
 import desktop_fields.Start;
-import desktop_fields.Street;
 
 public class MUI {
 	
