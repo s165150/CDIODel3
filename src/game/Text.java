@@ -14,6 +14,11 @@ public class Text
 		path = filePath;
 	}
 	
+	/**
+	 * Opens a text file, reads it line by line and saves each line into a seperate position in an array.
+	 * @return The array of lines in the txt.file
+	 * @throws IOException
+	 */
 	public String[] OpenFile() throws IOException
 	{
 		FileReader fileReader = new FileReader(path);
@@ -32,6 +37,11 @@ public class Text
 		return textList;
 	}
 	
+	/**
+	 * Counts all the lines in a file and returns the number of lines in the file as an integer.
+	 * @return The number of lines in the designated file (integer9
+	 * @throws IOException
+	 */
 	public int readLines() throws IOException
 	{
 		FileReader file_to_read = new FileReader(path);
