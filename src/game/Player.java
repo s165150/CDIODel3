@@ -10,18 +10,20 @@ public class Player {
 	private Account playerAccount;
 	private int playerNumber;
 	private int position;
+	private int ownedFleets;
 	
 	/**
 	 * Creates the constructor
 	 * @param name Reserves space for the player's name.
 	 * @param Account creates the instance of an Account within the player object.
 	 */
-	public Player (String name, int number, int value)
+	public Player (String name, int number, int value, int fleetsOwned)
 	{
 		playerName = name;
 		playerAccount = new Account();
 		playerNumber = number;
 		position = value;
+		ownedFleets = fleetsOwned;
 	}
 
 	
@@ -64,7 +66,14 @@ public class Player {
 			position = position - 20;
 		}
 	}
-	
+	public void setOwnedFleets(int fleetOwned)
+	{
+		ownedFleets = ownedFleets = fleetOwned;
+	}
+	public int getOwnedFleets()
+	{
+		return ownedFleets;
+	}
 	public int getPosition()
 	{
 		return position;

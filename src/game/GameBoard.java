@@ -62,7 +62,7 @@ public class GameBoard {
 	for(int i = 0; i < numOfPlayers; i++)
 	{
 	    String name = mui.getUserString("Enter Player " + (i+1) + "s name");
-	    Player plr = new Player(name, i, 0);
+	    Player plr = new Player(name, i, 0, 0);
 	    playerList.add(plr);
 	    mui.addPlayer(this, i);
 	    mui.setCarOnStart(this, i);

@@ -87,15 +87,15 @@ public class LaborCamp extends Ownable {
 	@Override
 	public void landOnField(GameBoard game, int b, int p) 
 		{
-		boolean labourOwned;
-				if(((Ownable)game.boardFields.get(b)).getOwner() != 0 && ((Ownable)game.boardFields.get(b)).getOwner() != game.playerList.get(p).getPlayerNumber())
-				{
-					labourOwned = true;
-				}
-				else if(((Ownable)game.boardFields.get(b)).getOwner() == 0)
-				{
-					labourOwned = false;
-				}
+//		boolean labourOwned;
+//				if(((Ownable)game.boardFields.get(b)).getOwner() != 0 && ((Ownable)game.boardFields.get(b)).getOwner() != game.playerList.get(p).getPlayerNumber())
+//				{
+//					labourOwned = true;
+//				}
+//				else if(((Ownable)game.boardFields.get(b)).getOwner() == 0)
+//				{
+//					labourOwned = false;
+//				}
 				
 		}
 

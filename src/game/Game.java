@@ -22,7 +22,6 @@ public class Game {
 		System.out.println(playersTurn);
 		if (game.playerList.get(playersTurn).getAccount().getBalance() > 0)
 		{
-			System.out.println(Collections.frequency(((Fleet)game.boardFields).owner, 10));
 		mui.get1Button("Press to roll the dice Player " + playersTurn, "SHAKE");
 		shaker.setShake();
 		game.playerList.get(playersTurn).setPosition(shaker.getShake());
@@ -33,7 +32,7 @@ public class Game {
 		mui.setBalance(game, ((Territory)game.boardFields.get(playersTurn)).getOwner());
 		if (game.playerList.get(playersTurn).getAccount().getBalance() < 1)
 		{
-			// check om noget er ejet, og sæt det til 0 hvis der er noget der er ejet.
+			game.playerList.get(playersTurn).setPlayerNumber(10);
 		}
 		}
 	}

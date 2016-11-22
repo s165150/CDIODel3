@@ -81,7 +81,7 @@ public class Fleet extends Ownable{
 		@Override
 		public int getRent() 
 		{
-			int rent;
+			int rent = 0;
 			switch(ownedFleets)
 			{
 			case 1: rent = RENT_1;
@@ -96,11 +96,24 @@ public class Fleet extends Ownable{
 			return rent;
 		}
 		
-	@Override
-	public void landOnField(GameBoard game, int b, int p) 
-	{
-		java.util.Collections.frequency( game.boardFields, 10);
-	}
+		@Override
+		public void landOnField(GameBoard game, int boardValue, int playersTurn) 
+		{
+			if(((Fleet)game.boardFields.get(boardValue)).getOwner() != 10 && ((Fleet)game.boardFields.get(boardValue)).getOwner() != game.playerList.get(playersTurn).getPlayerNumber())
+			{
+				ownedFleets = game.playerList.get(playersTurn).getOwnedFleets();	
+				game.playerList.get(playersTurn).getAccount().addBalance(-((Fleet)game.boardFields.get(boardValue)).getRent());
+				game.playerList.get(getOwner()).getAccount().addBalance(((Fleet)game.boardFields.get(boardValue)).getRent());
+			
+			}
+			else if (((Fleet)game.boardFields.get(boardValue)).getOwner() == 10)
+			{
+
+				setOwner(game.playerList.get(playersTurn).getPlayerNumber());
+				game.playerList.get(playersTurn).getAccount().addBalance(-price);
+				}
+				
+		}
 	
 	
 }
