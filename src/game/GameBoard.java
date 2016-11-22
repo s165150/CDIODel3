@@ -48,7 +48,9 @@ public class GameBoard {
 		boardFields.add(new Fleet(textList[23], textList[46], "4000", "icons/The_Buccaneers.png", Color.CYAN, 10, 4000));
 		boardFields.add(new Fleet(textList[24], textList[47], "4000", "icons/Privateer_Armada.png", Color.CYAN, 10, 4000));
 	}
-
+/**
+ * Creates the arraylist of the players in the game.
+ */
 	ArrayList<Player> playerList = new ArrayList<Player>();
 
 	int numOfPlayers;
@@ -60,7 +62,8 @@ public class GameBoard {
 		throw new IllegalArgumentException();
 	}
 
-
+	//This code is to verify that there is only being created the amount of users they asked for
+	//in this it also sets the players number and their position on the board, and how many fleets they own.
 	for(int i = 0; i < numOfPlayers; i++)
 	{
 	    String name = mui.getUserString("Enter Player " + (i+1) + "s name");

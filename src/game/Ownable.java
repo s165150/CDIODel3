@@ -13,9 +13,22 @@ public abstract class Ownable implements Field{
 		protected int price;
 		public int owner;
 	
-		//Methods		
+		/**
+		 * Creates a way to determine the rent of the propperty	
+		 * @return
+		 */
 		abstract int getRent();
 	
+		/**
+		 * Creates the constructor for the ownable classes to implement. 
+		 * @param title The title of the field
+		 * @param description The description shown in the field center
+		 * @param subText The text shown in the buttom of the field (Price recommended)
+		 * @param picture The background picture
+		 * @param color The background color of the field, is only shown if no/transparent picture is chosen
+	 	 * @param player Number The number (integer) of the player who owns the field
+	 	 * @param cost The buy price of the fieldt
+		 */
 		Ownable(String title, String description, String subText, String picture, Color color, int playerNumber, int cost)
 		{
 			fieldTitle = title;
@@ -26,34 +39,40 @@ public abstract class Ownable implements Field{
 			owner = playerNumber;
 			price = cost;
 		}
-			//Set methods
+			/**
+			 * Sets the price for the field
+			 * @param amount
+			 */
 			void setprice(int amount)
 			{
 				this.price = amount;
 			}
-		
+			/**
+			 * Sets the owner for the field
+			 * @param amount
+			 */
 			void setOwner(int value)
 			{
 				owner = value;
 			}
 		
-			//Get methods
+			/**
+			 * Gets the price for the field
+			 * @param amount
+			 */
 			int getPrice()
 			{
 				return price;
 			}
 			
+			/**
+			 * Gets the owner for the field
+			 * @param amount
+			 */
 			int getOwner()
 			{
 				return owner;
 			}
-			void purchasePropperty(boolean purchaseLot, GameBoard game, int playersTurn)
-			{
-				if (purchaseLot){
-					setOwner(game.playerList.get(playersTurn).getPlayerNumber());
-					game.playerList.get(playersTurn).getAccount().addBalance(-this.price);
-				}
-				
-			}
+			
 }
 

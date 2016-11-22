@@ -14,8 +14,11 @@ public class Player {
 	
 	/**
 	 * Creates the constructor
-	 * @param name Reserves space for the player's name.
-	 * @param Account creates the instance of an Account within the player object.
+	 * @param playerName Reserves space for the player's name.
+	 * @param playerAccount creates the instance of an Account within the player object.
+	 * @param playerNumber number to control ownership
+	 * @param position players position on the board
+	 * @param ownedFleets hov many fleets the player owns
 	 */
 	public Player (String name, int number, int value, int fleetsOwned)
 	{
@@ -26,14 +29,16 @@ public class Player {
 		ownedFleets = fleetsOwned;
 	}
 
-	
+	/**
+	 * Sets the player name
+	 */
 	public void setPlayerName(String name)
 	{
 		playerName = name;
 	}
+	
 	/**
 	 * Returns the player's name.
-	 * @return
 	 */
 	public String getPlayerName()
 	{
@@ -49,15 +54,25 @@ public class Player {
 		return playerAccount;
 	}
 	
+	/**
+	 * Sets the player number
+	 */
 	public void setPlayerNumber(int value)
 	{
 		playerNumber = value;
 	}
 	
+	/**
+	 * Gets the player number
+	 */
 	public int getPlayerNumber()
 	{
 		return playerNumber;
 	}
+	
+	/**
+	 * Sets the players position
+	 */
 	public void setPosition(int v)
 	{
 		position = v + position;
@@ -66,18 +81,31 @@ public class Player {
 			position = position - 22;
 		}
 	}
+	
+	/**
+	 * Sets the player owned fleets
+	 */
 	public void setOwnedFleets(int fleetOwned)
 	{
 		ownedFleets = ownedFleets = fleetOwned;
 	}
+	
+	/**
+	 * Sets the players owned fleet
+	 */
 	public int getOwnedFleets()
 	{
 		return ownedFleets;
 	}
+	
+	/**
+	 * Gets the players owned fleet
+	 */
 	public int getPosition()
 	{
 		return position;
 	}
+	
 	/**
 	 * Returns the name of the player
 	 */

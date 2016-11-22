@@ -30,6 +30,10 @@ public int addBalance(int point)
 	return Balance;
 }
 
+/**
+ * Sets the players balance
+ * @param balance
+ */
 public void setBalance(int balance)
 {
 	Balance = balance;

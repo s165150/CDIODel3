@@ -25,7 +25,7 @@ public class LaborCamp extends Ownable {
 	}
 	private int baseRent;
 	
-		//Set methods
+
 		@Override
 		public void setFieldTitle(String text) 
 		{
@@ -52,7 +52,6 @@ public class LaborCamp extends Ownable {
 			bgColor = color;
 		}
 		
-			//Get methods
 		@Override
 		public String getFieldTitle() 
 		{

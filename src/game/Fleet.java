@@ -25,7 +25,7 @@ public class Fleet extends Ownable{
 	private int RENT_4 = 4000;
 	private int ownedFleets = 0;
 	
-		//Set methods
+		
 		@Override
 		public void setFieldTitle(String text) 
 		{
