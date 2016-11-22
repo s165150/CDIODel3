@@ -23,7 +23,8 @@ public class GameBoard {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+		
+		
 		boardFields.add(new Territory(textList[4], textList[27], "1000", "icons/Tribe_Encampment.png", Color.WHITE, 10, 1000, 100));
 		boardFields.add(new Territory(textList[5], textList[28], "1500", "icons/Crater.png", Color.WHITE, 10, 1500, 300));
 		boardFields.add(new Territory(textList[6], textList[29], "2000", "icons/Mountain.png", Color.WHITE, 10, 2000, 500));
@@ -62,7 +63,7 @@ public class GameBoard {
 	for(int i = 0; i < numOfPlayers; i++)
 	{
 	    String name = mui.getUserString("Enter Player " + (i+1) + "s name");
-	    Player plr = new Player(name, i, 0, 0);
+	    Player plr = new Player(name, i, 1, 0);
 	    playerList.add(plr);
 	    mui.addPlayer(this, i);
 	    mui.setCarOnStart(this, i);
