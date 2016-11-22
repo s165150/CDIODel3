@@ -9,7 +9,7 @@ public interface Field {
 	 * @param player
 	 */
 	//Methods
-	abstract void landOnField(GameBoard game, int b, int p, boolean get2Buttons);
+	abstract void landOnField(GameBoard game, int b, int p, MUI mui);
 	
 		//Set methods
 		void setFieldTitle(String text);

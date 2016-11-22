@@ -41,8 +41,8 @@ public class GameBoard {
 		boardFields.add(new Refuge(textList[16], textList[39], "500", "icons/Monastery.png", Color.GREEN, 500));
 		boardFields.add(new LaborCamp(textList[17], textList[40], "2500", "icons/Huts_In_The_Mountain.png", Color.PINK, 10 , 2500, 100));
 		boardFields.add(new LaborCamp(textList[18], textList[41], "2500", "icons/Pit.png", Color.PINK, 10, 2500, 100));
-		boardFields.add(new Tax(textList[19], textList[42], "2000", "icons/Goldmine.png", Color.LIGHT_GRAY, 2000,0));
-		boardFields.add(new Tax(textList[20], textList[43], "4000 / 10%", "icons/Caravan.png", Color.LIGHT_GRAY, 4000,0.10));
+		boardFields.add(new Tax(textList[19], textList[42], "2000", "icons/Goldmine.png", Color.LIGHT_GRAY, 2000, 0));
+		boardFields.add(new Tax(textList[20], textList[43], "4000 / 10%", "icons/Caravan.png", Color.LIGHT_GRAY, 4000, 0.10));
 		boardFields.add(new Fleet(textList[21], textList[44], "4000", "icons/Second_Sail.png", Color.CYAN, 10, 4000));
 		boardFields.add(new Fleet(textList[22], textList[45], "4000", "icons/Sea_Grover.png", Color.CYAN, 10, 4000));
 		boardFields.add(new Fleet(textList[23], textList[46], "4000", "icons/The_Buccaneers.png", Color.CYAN, 10, 4000));

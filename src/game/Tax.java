@@ -102,21 +102,23 @@ public class Tax implements Field {
 		
 		Scanner input = new Scanner(System.in);
 	@Override
-	public void landOnField(GameBoard game, int v, int p, boolean payTax) {
+	public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui) {
+		if(((Tax)game.boardFields.get(boardValue)).getTaxRate() > 0)
+			{
+			boolean taxChoice = mui.get2Buttons("Do you want to pay 4000 or 10% of your current money?", "4000", "10%");
+				if (taxChoice)
+				{
+				game.playerList.get(playersTurn).getAccount().addBalance(-((Tax)game.boardFields.get(boardValue)).getTaxAmount());
+				}
+				else
+				{
+				game.playerList.get(playersTurn).getAccount().addBalance(-(int)((double)(game.playerList.get(playersTurn).getAccount().getBalance())*((Tax)game.boardFields.get(boardValue)).getTaxRate()));
+				}
+			}
+		else game.playerList.get(playersTurn).getAccount().addBalance(-((Tax)game.boardFields.get(boardValue)).getTaxAmount());
 	}
 
-//	{
-//		System.out.println("Press 1 to pay" + ((Tax)game.boardFields.get(v)).getTaxRate() + " or press 2 to pay 10% of your total assets");
-//			int a = input.nextInt();
-//		if(a == 1)
-//			{
-//				game.playerList.get(v).getAccount().addBalance(-taxAmount);
-//			}
-//			else if (a == 2)
-//			{
-//				game.playerList.get(v).getAccount().addBalance((int) -(game.playerList.get(v).getAccount().getBalance()*taxRate)); //AMEN FORHELVED. Ingen af kaldene virker...
-//			}
-//	}
+	
 
 
 }

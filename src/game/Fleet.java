@@ -97,12 +97,13 @@ public class Fleet extends Ownable{
 		}
 		
 		@Override
-		public void landOnField(GameBoard game, int boardValue, int playersTurn, boolean buyPropperty) 
+		public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui) 
 		{
 			if(((Fleet)game.boardFields.get(boardValue)).getOwner() != 10 && ((Fleet)game.boardFields.get(boardValue)).getOwner() != game.playerList.get(playersTurn).getPlayerNumber())
 			{
 				if(game.playerList.get(((Fleet)game.boardFields.get(boardValue)).getOwner()).getAccount().getBalance() < 1)
 				{
+					boolean buyPropperty = mui.get2Buttons("Do you want to buy this lot?", "yes", "no");
 					if (buyPropperty){
 						this.setOwner(game.playerList.get(playersTurn).getPlayerNumber());
 						game.playerList.get(playersTurn).getAccount().addBalance(-this.price);
@@ -116,6 +117,7 @@ public class Fleet extends Ownable{
 			}
 			if (((Fleet)game.boardFields.get(boardValue)).getOwner() == 10)
 			{
+				boolean buyPropperty = mui.get2Buttons("Do you want to buy this lot?", "yes", "no");
 				if (buyPropperty){
 					this.setOwner(game.playerList.get(playersTurn).getPlayerNumber());
 					game.playerList.get(playersTurn).getAccount().addBalance(-this.price);
