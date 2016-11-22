@@ -82,7 +82,7 @@ public class Fleet extends Ownable{
 		public int getRent() 
 		{
 			int rent;
-			switch(owned)
+			switch(ownedFleets)
 			{
 			case 1: rent = RENT_1;
 			break;
@@ -99,7 +99,7 @@ public class Fleet extends Ownable{
 	@Override
 	public void landOnField(GameBoard game, int b, int p) 
 	{
-			
+		java.util.Collections.frequency( game.boardFields, 10);
 	}
 	
 	

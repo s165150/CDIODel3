@@ -1,5 +1,6 @@
 package game;
 
+import java.util.Collections;
 
 public class Game {
 	
@@ -21,6 +22,7 @@ public class Game {
 		System.out.println(playersTurn);
 		if (game.playerList.get(playersTurn).getAccount().getBalance() > 0)
 		{
+			System.out.println(Collections.frequency(((Fleet)game.boardFields).owner, 10));
 		mui.get1Button("Press to roll the dice Player " + playersTurn, "SHAKE");
 		shaker.setShake();
 		game.playerList.get(playersTurn).setPosition(shaker.getShake());
