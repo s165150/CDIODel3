@@ -85,7 +85,7 @@ public class Territory extends Ownable {
 		}
 		
 		@Override
-		public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui) 
+		public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui, Shaker shake) 
 		{
 			if(((Territory)game.boardFields.get(boardValue)).getOwner() != 10 && ((Territory)game.boardFields.get(boardValue)).getOwner() != game.playerList.get(playersTurn).getPlayerNumber())
 			{

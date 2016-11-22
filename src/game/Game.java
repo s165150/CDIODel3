@@ -26,7 +26,7 @@ public class Game {
 		shaker.setShake();
 		game.playerList.get(playersTurn).setPosition(shaker.getShake());
 		mui.playTurn(game, playersTurn, shaker);
-		game.boardFields.get(game.playerList.get(playersTurn).getPosition()).landOnField(game, game.playerList.get(playersTurn).getPosition(), playersTurn, mui);
+		game.boardFields.get(game.playerList.get(playersTurn).getPosition()).landOnField(game, game.playerList.get(playersTurn).getPosition(), playersTurn, mui, shaker);
 		mui.setBalance(game, playersTurn);
 		if(((Territory)game.boardFields.get(playersTurn)).getOwner() != 10)
 		mui.setBalance(game, ((Territory)game.boardFields.get(playersTurn)).getOwner());

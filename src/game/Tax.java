@@ -102,7 +102,7 @@ public class Tax implements Field {
 		
 		Scanner input = new Scanner(System.in);
 	@Override
-	public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui) {
+	public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui, Shaker shake) {
 		if(((Tax)game.boardFields.get(boardValue)).getTaxRate() > 0)
 			{
 			boolean taxChoice = mui.get2Buttons("Do you want to pay 4000 or 10% of your current money?", "4000", "10%");
