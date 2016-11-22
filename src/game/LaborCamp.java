@@ -85,7 +85,7 @@ public class LaborCamp extends Ownable {
 		}
 			
 	@Override
-	public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui, Shaker shake) 
+	public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui, Shaker shaker) 
 		{
 		if(((LaborCamp)game.boardFields.get(boardValue)).getOwner() != 10 && ((LaborCamp)game.boardFields.get(boardValue)).getOwner() != game.playerList.get(playersTurn).getPlayerNumber())
 		{
@@ -98,11 +98,14 @@ public class LaborCamp extends Ownable {
 				}
 			}
 			else
-			game.playerList.get(playersTurn).getAccount().addBalance(-((LaborCamp)game.boardFields.get(boardValue)).getRent()*shake.getShake());
-			game.playerList.get(getOwner()).getAccount().addBalance(((LaborCamp)game.boardFields.get(boardValue)).getRent()*shake.getShake());
-		
+			{
+			mui.get1Button("Press to roll the dice " + game.playerList.get(playersTurn).getPlayerName(), "SHAKE");
+			shaker.setShake();
+			game.playerList.get(playersTurn).getAccount().addBalance(-((LaborCamp)game.boardFields.get(boardValue)).getRent()*shaker.getShake());
+			game.playerList.get(getOwner()).getAccount().addBalance(((LaborCamp)game.boardFields.get(boardValue)).getRent()*shaker.getShake());
+			}
 		}
-		if (((Territory)game.boardFields.get(boardValue)).getOwner() == 10)
+		if (((LaborCamp)game.boardFields.get(boardValue)).getOwner() == 10)
 		{
 			boolean buyPropperty = mui.get2Buttons("Do you want to buy this lot?", "yes", "no");
 			if (buyPropperty){

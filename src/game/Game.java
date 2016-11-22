@@ -9,6 +9,7 @@ public class Game {
 	int i = 0;
 	int winner;
 	Rule rule;
+
 	
 	public void startGame()
 	{
@@ -29,12 +30,25 @@ public class Game {
 		game.boardFields.get(game.playerList.get(playersTurn).getPosition()).landOnField(game, game.playerList.get(playersTurn).getPosition(), playersTurn, mui, shaker);
 		mui.setBalance(game, playersTurn);
 		if(((Territory)game.boardFields.get(playersTurn)).getOwner() != 10)
-		mui.setBalance(game, ((Territory)game.boardFields.get(playersTurn)).getOwner());
+			{
+			mui.setBalance(game, ((Territory)game.boardFields.get(playersTurn)).getOwner());
+			}
+		
 		if (game.playerList.get(playersTurn).getAccount().getBalance() < 1)
-		{
-			game.playerList.get(playersTurn).setPlayerNumber(10); //skal snakkes igennem
-			winner = winner -1;
-		}
+			{
+				for(Field item : game.boardFields)
+				{
+					if((item instanceof Ownable) && (((Ownable)item).getOwner() == game.playerList.get(playersTurn).getPlayerNumber()))
+					{
+					((Ownable)item).setOwner(10);
+					System.out.println(((Ownable)item).getOwner());
+					}
+
+				}
+			
+				winner = winner -1;
+			
+			}
 		
 		}
 		if(winner == 1)
