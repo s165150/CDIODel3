@@ -61,9 +61,9 @@ public class Player {
 	public void setPosition(int v)
 	{
 		position = v + position;
-		if (position > 20)
+		if (position > 22)
 		{
-			position = position - 20;
+			position = position - 22;
 		}
 	}
 	public void setOwnedFleets(int fleetOwned)

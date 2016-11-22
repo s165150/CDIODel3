@@ -85,26 +85,29 @@ public class Territory extends Ownable {
 		}
 		
 		@Override
-		public void landOnField(GameBoard game, int boardValue, int playersTurn) 
+		public void landOnField(GameBoard game, int boardValue, int playersTurn, boolean buyPropperty) 
 		{
 			if(((Territory)game.boardFields.get(boardValue)).getOwner() != 10 && ((Territory)game.boardFields.get(boardValue)).getOwner() != game.playerList.get(playersTurn).getPlayerNumber())
 			{
 				if(game.playerList.get(((Territory)game.boardFields.get(boardValue)).getOwner()).getAccount().getBalance() < 1)
 				{
-					setOwner(game.playerList.get(playersTurn).getPlayerNumber());
-					game.playerList.get(playersTurn).getAccount().addBalance(-price);
+					if (buyPropperty){
+						this.setOwner(game.playerList.get(playersTurn).getPlayerNumber());
+						game.playerList.get(playersTurn).getAccount().addBalance(-this.price);
+					}
 				}
 				else
 				game.playerList.get(playersTurn).getAccount().addBalance(-((Territory)game.boardFields.get(boardValue)).getRent());
 				game.playerList.get(getOwner()).getAccount().addBalance(((Territory)game.boardFields.get(boardValue)).getRent());
 			
 			}
-			else if (((Territory)game.boardFields.get(boardValue)).getOwner() == 10)
+			if (((Territory)game.boardFields.get(boardValue)).getOwner() == 10)
 			{
-
-					setOwner(game.playerList.get(playersTurn).getPlayerNumber());
-					game.playerList.get(playersTurn).getAccount().addBalance(-price);
+				if (buyPropperty){
+					this.setOwner(game.playerList.get(playersTurn).getPlayerNumber());
+					game.playerList.get(playersTurn).getAccount().addBalance(-this.price);
 				}
+			}
 				
 		}
 	

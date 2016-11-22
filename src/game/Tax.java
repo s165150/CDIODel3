@@ -102,7 +102,7 @@ public class Tax implements Field {
 		
 		Scanner input = new Scanner(System.in);
 	@Override
-	public void landOnField(GameBoard game, int v, int p) {
+	public void landOnField(GameBoard game, int v, int p, boolean payTax) {
 	}
 
 //	{

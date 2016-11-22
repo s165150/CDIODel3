@@ -27,9 +27,9 @@ public class MUI {
 			setSubText(null).
 			build();
 	
-	for(int i = 1 ; i < game.boardFields.size(); i++)
+	for(int i = 2 ; i < game.boardFields.size(); i++)
 	{
-	fields[i] = new Refuge.Builder().
+	fields[i-1] = new Refuge.Builder().
 			setTitle(game.boardFields.get(i).getFieldTitle()).
 			setSubText(game.boardFields.get(i).getFieldSubText()).
 			setDescription(game.boardFields.get(i).getFieldDescription()).

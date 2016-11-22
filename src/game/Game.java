@@ -26,15 +26,14 @@ public class Game {
 		shaker.setShake();
 		game.playerList.get(playersTurn).setPosition(shaker.getShake());
 		mui.playTurn(game, playersTurn, shaker);
-		game.boardFields.get(game.playerList.get(playersTurn).getPosition()).landOnField(game, game.playerList.get(playersTurn).getPosition(), playersTurn);
+		game.boardFields.get(game.playerList.get(playersTurn).getPosition()).landOnField(game, game.playerList.get(playersTurn).getPosition(), playersTurn, mui.get2Buttons("Do you want to purchase this lot", "Yes", "No"));
 		mui.setBalance(game, playersTurn);
 		if(((Territory)game.boardFields.get(playersTurn)).getOwner() != 10)
 		mui.setBalance(game, ((Territory)game.boardFields.get(playersTurn)).getOwner());
 		if (game.playerList.get(playersTurn).getAccount().getBalance() < 1)
 		{
-			game.playerList.get(playersTurn).setPlayerNumber(10);
+			game.playerList.get(playersTurn).setPlayerNumber(10); //skal snakkes igennem
 			winner = winner -1;
-			
 		}
 		
 		}

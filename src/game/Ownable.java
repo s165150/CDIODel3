@@ -47,4 +47,13 @@ public abstract class Ownable implements Field{
 			{
 				return owner;
 			}
+			void purchasePropperty(boolean purchaseLot, GameBoard game, int playersTurn)
+			{
+				if (purchaseLot){
+					setOwner(game.playerList.get(playersTurn).getPlayerNumber());
+					game.playerList.get(playersTurn).getAccount().addBalance(-this.price);
+				}
+				
+			}
 }
+
