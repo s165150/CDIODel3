@@ -12,8 +12,13 @@ public class Rule {
 	 * @param player
 	 * @return
 	 */
-	boolean winner(Player player1)
+	boolean winner(int playersInGame)
 		{
-			
+
+			if(playersInGame == 1)
+			{
+				return true;
+			}
+			return false;
 		}
 }

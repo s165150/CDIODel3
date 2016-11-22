@@ -89,9 +89,13 @@ public class Territory extends Ownable {
 		{
 			if(((Territory)game.boardFields.get(boardValue)).getOwner() != 10 && ((Territory)game.boardFields.get(boardValue)).getOwner() != game.playerList.get(playersTurn).getPlayerNumber())
 			{
+				if(game.playerList.get(((Territory)game.boardFields.get(boardValue)).getOwner()).getAccount().getBalance() < 1)
+				{
+					setOwner(game.playerList.get(playersTurn).getPlayerNumber());
+					game.playerList.get(playersTurn).getAccount().addBalance(-price);
+				}
+				else
 				game.playerList.get(playersTurn).getAccount().addBalance(-((Territory)game.boardFields.get(boardValue)).getRent());
-				System.out.println("ejer " + getOwner());
-				System.out.println("spiller " + playersTurn);
 				game.playerList.get(getOwner()).getAccount().addBalance(((Territory)game.boardFields.get(boardValue)).getRent());
 			
 			}
