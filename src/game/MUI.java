@@ -22,13 +22,14 @@ public class MUI {
 	Field[] fields = new Field[22];
 	fields[0] = new Start.Builder().
 			setTitle("Start").
+			setDescription("").
 			setBgColor(Color.RED).
 			setSubText(null).
 			build();
 	
-	for(int i = 0 ; i < game.boardFields.size(); i++)
+	for(int i = 1 ; i < game.boardFields.size(); i++)
 	{
-	fields[i+1] = new Refuge.Builder().
+	fields[i] = new Refuge.Builder().
 			setTitle(game.boardFields.get(i).getFieldTitle()).
 			setSubText(game.boardFields.get(i).getFieldSubText()).
 			setDescription(game.boardFields.get(i).getFieldDescription()).

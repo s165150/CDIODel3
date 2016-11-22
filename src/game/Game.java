@@ -1,7 +1,5 @@
 package game;
 
-import java.util.Collections;
-
 public class Game {
 	
 	GameBoard game = new GameBoard();
