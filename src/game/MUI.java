@@ -20,11 +20,11 @@ public class MUI {
 		break;
 		case 1 : color = Color.BLUE;
 		break;
-		case 2 : color = Color.GREEN;
+		case 2 : color = Color.MAGENTA;
 		break;
-		case 3 : color = Color.BLACK;
+		case 3 : color = Color.ORANGE;
 		break;
-		case 4 : color = Color.WHITE;
+		case 4 : color = Color.PINK;
 		break;
 		case 5 : color = Color.YELLOW;
 		}
@@ -53,6 +53,7 @@ public class MUI {
 			setDescription(game.boardFields.get(i).getFieldDescription()).
 			setBgColor(game.boardFields.get(i).getBgColor()).
 			setPicture(game.boardFields.get(i).getFieldPicture()).
+			setRent(getRent(game,i)).
 			build();
 	}
 	GUI.create(fields);
@@ -74,6 +75,15 @@ public class MUI {
 		return GUI.getUserString(msg);
 	}
 	
+	String getRent(GameBoard game, int c)
+	{
+		String rent = "";
+		if(game.boardFields.get(c) instanceof Ownable == true)
+		{
+			rent = "Rent: " + Integer.toString(((Ownable)game.boardFields.get(c)).getRent());
+		}
+		return rent;
+	}
 	/**
 	 * Displays a message to the user and awaits a response
 	 * @param msg The message shown to the user
