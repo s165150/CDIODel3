@@ -28,12 +28,7 @@ public class Game {
 		game.playerList.get(playersTurn).setPosition(shaker.getShake());
 		mui.playTurn(game, playersTurn, shaker);
 		game.boardFields.get(game.playerList.get(playersTurn).getPosition()).landOnField(game, game.playerList.get(playersTurn).getPosition(), playersTurn, mui, shaker);
-		mui.setBalance(game, playersTurn);
-		if(((Ownable)game.boardFields.get(playersTurn)).getOwner() != 10)
-			{
-			mui.setBalance(game, ((Ownable)game.boardFields.get(playersTurn)).getOwner());
-			}
-		
+		mui.setBalance(game, playersTurn);		
 		if (game.playerList.get(playersTurn).getAccount().getBalance() < 1)
 			{
 				for(Field item : game.boardFields)
@@ -41,6 +36,7 @@ public class Game {
 					if((item instanceof Ownable) && (((Ownable)item).getOwner() == game.playerList.get(playersTurn).getPlayerNumber()))
 					{
 					((Ownable)item).setOwner(10);
+					mui.setOwner(game.playerList.get(playersTurn).getPosition(), game.playerList.get(playersTurn).getPlayerName());
 					}
 
 				}

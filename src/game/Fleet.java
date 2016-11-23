@@ -101,27 +101,12 @@ public class Fleet extends Ownable{
 		{
 			if(((Fleet)game.boardFields.get(boardValue)).getOwner() != 10 && ((Fleet)game.boardFields.get(boardValue)).getOwner() != game.playerList.get(playersTurn).getPlayerNumber())
 			{
-				if(game.playerList.get(((Fleet)game.boardFields.get(boardValue)).getOwner()).getAccount().getBalance() < 1)
-				{
-					boolean buyPropperty = mui.get2Buttons("Do you want to buy this lot?", "yes", "no");
-					if (buyPropperty){
-						this.setOwner(game.playerList.get(playersTurn).getPlayerNumber());
-						game.playerList.get(playersTurn).getAccount().addBalance(-this.price);
-					}
-				}
-				else
-				ownedFleets = game.playerList.get(playersTurn).getOwnedFleets();	
-				game.playerList.get(playersTurn).getAccount().addBalance(-((Fleet)game.boardFields.get(boardValue)).getRent());
-				game.playerList.get(getOwner()).getAccount().addBalance(((Fleet)game.boardFields.get(boardValue)).getRent());
-			
+				ownedFleets = game.playerList.get(playersTurn).getOwnedFleets();
+				payRent(((Fleet)game.boardFields.get(boardValue)).getRent(), game, playersTurn);
 			}
-			if (((Fleet)game.boardFields.get(boardValue)).getOwner() == 10)
+			else if (((Fleet)game.boardFields.get(boardValue)).getOwner() == 10)
 			{
-				boolean buyPropperty = mui.get2Buttons("Do you want to buy this lot?", "yes", "no");
-				if (buyPropperty){
-					this.setOwner(game.playerList.get(playersTurn).getPlayerNumber());
-					game.playerList.get(playersTurn).getAccount().addBalance(-this.price);
-				}
+				buyPropperty(game, mui, playersTurn, boardValue);
 			}	
 		}
 	
