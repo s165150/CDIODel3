@@ -69,7 +69,7 @@ public class GameBoard {
 	    String name = mui.getUserString("Enter Player " + (i+1) + "s name");
 	    Player plr = new Player(name, i, 1, 0);
 	    playerList.add(plr);
-	    mui.addPlayer(this, i);
+	    mui.addPlayer(this, i,i);
 	    mui.setCarOnStart(this, i);
 	}
 	}

@@ -6,12 +6,30 @@ package game;
 import desktop_resources.GUI;
 import java.awt.Color;
 import desktop_codebehind.Car;
-import desktop_fields.Refuge;
+import desktop_fields.Shipping;
 import desktop_fields.Field;
 import desktop_fields.Start;
 
 public class MUI {
 	
+	public Color getColor(int c)
+	{
+		Color color = Color.ORANGE;
+		switch(c){
+		case 0 : color = Color.RED;
+		break;
+		case 1 : color = Color.BLUE;
+		break;
+		case 2 : color = Color.GREEN;
+		break;
+		case 3 : color = Color.BLACK;
+		break;
+		case 4 : color = Color.WHITE;
+		break;
+		case 5 : color = Color.YELLOW;
+		}
+		return color;
+	}
 	/**
 	 * @param createBoard Creates the GUI with a set
 	 * @param text The Text class where the fieldArray is located
@@ -29,7 +47,7 @@ public class MUI {
 	
 	for(int i = 2 ; i < game.boardFields.size(); i++)
 	{
-	fields[i-1] = new Refuge.Builder().
+	fields[i-1] = new Shipping.Builder().
 			setTitle(game.boardFields.get(i).getFieldTitle()).
 			setSubText(game.boardFields.get(i).getFieldSubText()).
 			setDescription(game.boardFields.get(i).getFieldDescription()).
@@ -69,9 +87,9 @@ public class MUI {
 	 * Adds a player to the board
 	 * @param color The color of the players car
 	 */
-	void addPlayer(GameBoard game, int v)
+	void addPlayer(GameBoard game, int v,int c)
 	{
-		Car car = new Car.Builder().build();
+		Car car = new Car.Builder().secondaryColor(getColor(c)).build();
 		GUI.addPlayer(game.playerList.get(v).getPlayerName(), game.playerList.get(v).getAccount().getBalance(),car);
 	}
 	
@@ -143,4 +161,19 @@ public class MUI {
 		return GUI.getUserLeftButtonPressed(msg, truebutton, falsebutton);
 	}
 
+	/**
+	 * A set method for updating the owners of fields in the GUI. 
+	 * @param board
+	 * @param player
+	 */
+	void setOwner(int pos, String player)
+	{
+	GUI.setOwner(pos, player);
+	}
+	
+	void removeOwner(int pos)
+	{
+		GUI.removeOwner(pos);
+	}
+	
 }

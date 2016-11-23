@@ -2,27 +2,27 @@ Welcome message:
 1
 
 Titles:
-Tribe Encampment
+Tribe
 Crater
 Mountain
 Cold Desert
 Black Cave
 The Warewall
-Mountain Village
+Village
 South Citadel
 Palace Gates
 Tower
 Castle
 Walled City
 Monastery
-Huts In The Mountain
+Mountain hut
 The Pit
 Goldmine
 Caravan
 Second Sail
 Sea Grover
-The Buccaneers
-Privateer Armada
+Buccaneers
+Privateers
 
 Descriptions:
 A vild and primitive place
