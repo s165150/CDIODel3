@@ -24,7 +24,7 @@ public class GameBoard {
 		}
 		
 		boardFields.add(new Territory(null, null, null, null, null, 10, numOfPlayers, numOfPlayers));
-		boardFields.add(new Refuge(null, null, null, null, null, 10));
+		boardFields.add(new Refuge(null, null, null, null, null, 0));
 		boardFields.add(new Territory(textList[4], textList[27], "1000", "icons/Tribe_Encampment.png", Color.WHITE, 10, 1000, 100));
 		boardFields.add(new Territory(textList[5], textList[28], "1500", "icons/Crater.png", Color.WHITE, 10, 1500, 300));
 		boardFields.add(new Territory(textList[6], textList[29], "2000", "icons/Mountain.png", Color.WHITE, 10, 2000, 500));

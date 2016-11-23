@@ -87,7 +87,7 @@ public class Player {
 	 */
 	public void setOwnedFleets(int fleetOwned)
 	{
-		ownedFleets = ownedFleets = fleetOwned;
+		ownedFleets = ownedFleets + fleetOwned;
 	}
 	
 	/**

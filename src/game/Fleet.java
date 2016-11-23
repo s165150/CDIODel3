@@ -102,10 +102,12 @@ public class Fleet extends Ownable{
 			if(((Fleet)game.boardFields.get(boardValue)).getOwner() == 10)
 			{
 				buyProperty(game, mui, playersTurn, boardValue);
+				game.playerList.get(playersTurn).setOwnedFleets(1);
 			}
 			else
 			{
-			ownedFleets = game.playerList.get(playersTurn).getOwnedFleets();
+			ownedFleets = game.playerList.get(((Fleet)game.boardFields.get(boardValue)).getOwner()).getOwnedFleets();
+			System.out.println(ownedFleets);
 			payRent(((Fleet)game.boardFields.get(boardValue)).getRent(), game, playersTurn);
 			}
 				

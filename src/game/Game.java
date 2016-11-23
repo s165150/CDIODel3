@@ -60,19 +60,6 @@ public class Game {
 		
 		}
 		
-		for(Player list : game.playerList)
-		{
-			int win = numOfPlayers;
-			
-			if(list.getPlayerNumber() != 10)
-			{
-				win--;
-			}
-			if(win == 1)
-			{
-				winner = 1;
-			}
-		}
 //		if(winner == 1)
 //		{
 //			String winPlayer = null;
