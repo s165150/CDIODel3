@@ -1,5 +1,7 @@
 package game;
 
+import java.io.IOException;
+
 public class Game {
 	
 	GameBoard game = new GameBoard();
@@ -11,8 +13,17 @@ public class Game {
 	Rule rule;
 
 	
+	
 	public void startGame()
 	{
+		Text file = new Text("GameText.txt");
+		String[] textList = null;
+		try {
+			textList = file.OpenFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	mui.createBoard(game);
 	game.createPlayerList(numOfPlayers = mui.getUserInt("Please enter the number of players"));
 	winner = numOfPlayers;
@@ -28,7 +39,11 @@ public class Game {
 		game.playerList.get(playersTurn).setPosition(shaker.getShake());
 		mui.playTurn(game, playersTurn, shaker);
 		game.boardFields.get(game.playerList.get(playersTurn).getPosition()).landOnField(game, game.playerList.get(playersTurn).getPosition(), playersTurn, mui, shaker);
-		mui.setBalance(game, playersTurn);		
+		for(Player list : game.playerList)
+		{
+			mui.setBalance(game, list.getPlayerNumber());	
+		}
+		
 		if (game.playerList.get(playersTurn).getAccount().getBalance() < 1)
 			{
 				for(Field item : game.boardFields)
@@ -40,18 +55,37 @@ public class Game {
 					}
 
 				}
-			
-				winner = winner -1;
-			
 			}
 		
 		}
-		if(winner == 1)
+		
+		for(Player list : game.playerList)
 		{
-			mui.displayMidDescription(game.playerList.get(playersTurn).getPlayerName() + "WON THE GAME!!!");
-			mui.get1Button("Press to end the game", "end game");
-			System.exit(1);
+			int win = numOfPlayers;
+			
+			if(list.getPlayerNumber() != 10)
+			{
+				win--;
+			}
+			if(win == 1)
+			{
+				winner = 1;
+			}
 		}
+//		if(winner == 1)
+//		{
+//			String winPlayer = null;
+//			for(Player list : game.playerList)
+//			{
+//				if(list.getPlayerNumber() != 10)
+//				{
+//					winPlayer = list.getPlayerName();
+//				}
+//			}
+//			mui.displayMidDescription(winPlayer + "WON THE GAME!!!");
+//			mui.get1Button("Press to end the game", "end game");
+//			System.exit(1);
+//		}
 		
 		
 	}

@@ -3,6 +3,7 @@ package game;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,12 +12,10 @@ public class GameBoard {
 
 	MUI mui = new MUI();
 	Scanner input = new Scanner(System.in);
-	
 	ArrayList<Field> boardFields = new ArrayList<Field>();
+	Text file = new Text("FieldText.txt");
 	public void createGameBoard()
 	{
-		
-		Text file = new Text("FieldText.txt");
 		String[] textList = null;
 		try {
 			textList = file.OpenFile();
@@ -73,4 +72,7 @@ public class GameBoard {
 	    mui.setCarOnStart(this, i);
 	}
 	}
+	
+
+	
 }

@@ -13,6 +13,16 @@ public class Text
 	{
 		path = filePath;
 	}
+
+	public void createText(Text text)
+	{
+		String[] textList = null;
+		try {
+			textList = text.OpenFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	/**
 	 * Opens a text file, reads it line by line and saves each line into a seperate position in an array.

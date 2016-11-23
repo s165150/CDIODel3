@@ -1,0 +1,6 @@
+Please enter the number of players
+Press to roll the dice
+Roll
+Press to end the game
+End game
+won the game!!
