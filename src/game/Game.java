@@ -10,6 +10,7 @@ public class Game {
 	int numOfPlayers;
 	int i = 0;
 	int winner;
+	int index = 0;
 	Rule rule;
 
 	
@@ -51,9 +52,9 @@ public class Game {
 					if((item instanceof Ownable) && (((Ownable)item).getOwner() == game.playerList.get(playersTurn).getPlayerNumber()))
 					{
 					((Ownable)item).setOwner(10);
-					mui.removeOwner(game.playerList.get(playersTurn).getPosition());
+					mui.removeOwner(index);
 					}
-
+					index++;
 				}
 			}
 		
