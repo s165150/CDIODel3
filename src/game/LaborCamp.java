@@ -90,11 +90,20 @@ public class LaborCamp extends Ownable {
 			{
 			buyProperty(game, mui, playersTurn, boardValue);		
 			}
-		else
+		else if(((LaborCamp)game.boardFields.get(boardValue)).getOwner() != game.playerList.get(playersTurn).getPlayerNumber())
 			{
 			mui.get1Button("Press to roll the dice " + game.playerList.get(playersTurn).getPlayerName(), "SHAKE");
 			shaker.setShake();
-			payRent(((LaborCamp)game.boardFields.get(boardValue)).getRent()*shaker.getShake(), game, playersTurn);
+			mui.setDice(shaker);
+			int ownedLaborCamps = 0;
+			for(Field item : game.boardFields)
+			{
+				if((item instanceof LaborCamp) && (((Ownable)item).getOwner() == game.playerList.get(((Ownable)game.boardFields.get(boardValue)).getOwner()).getPlayerNumber()))
+				{
+				ownedLaborCamps++;
+				}
+			}
+			payRent((((LaborCamp)game.boardFields.get(boardValue)).getRent()*shaker.getShake()*ownedLaborCamps), game, playersTurn);
 			}
 				
 		}

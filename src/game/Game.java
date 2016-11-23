@@ -47,6 +47,7 @@ public class Game {
 		
 		if (game.playerList.get(playersTurn).getAccount().getBalance() < 1)
 			{
+			index = 0;
 				for(Field item : game.boardFields)
 				{
 					if((item instanceof Ownable) && (((Ownable)item).getOwner() == game.playerList.get(playersTurn).getPlayerNumber()))

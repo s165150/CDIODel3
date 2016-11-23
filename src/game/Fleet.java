@@ -107,7 +107,6 @@ public class Fleet extends Ownable{
 			else
 			{
 			ownedFleets = game.playerList.get(((Fleet)game.boardFields.get(boardValue)).getOwner()).getOwnedFleets();
-			System.out.println(ownedFleets);
 			payRent(((Fleet)game.boardFields.get(boardValue)).getRent(), game, playersTurn);
 			}
 				
