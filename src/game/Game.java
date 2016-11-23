@@ -36,7 +36,7 @@ public class Game {
 					if((item instanceof Ownable) && (((Ownable)item).getOwner() == game.playerList.get(playersTurn).getPlayerNumber()))
 					{
 					((Ownable)item).setOwner(10);
-					mui.setOwner(game.playerList.get(playersTurn).getPosition(), game.playerList.get(playersTurn).getPlayerName());
+					mui.removeOwner(game.playerList.get(playersTurn).getPosition());
 					}
 
 				}

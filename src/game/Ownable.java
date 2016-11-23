@@ -74,7 +74,7 @@ public abstract class Ownable implements Field{
 				return owner;
 			}
 			
-			void buyPropperty(GameBoard game, MUI mui, int playersTurn, int boardValue)
+			void buyProperty(GameBoard game, MUI mui, int playersTurn, int boardValue)
 			{
 				boolean buyPropperty = mui.get2Buttons("Do you want to buy this lot?", "yes", "no");
 				if (buyPropperty){

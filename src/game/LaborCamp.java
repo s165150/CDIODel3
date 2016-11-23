@@ -86,15 +86,15 @@ public class LaborCamp extends Ownable {
 	@Override
 	public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui, Shaker shaker) 
 		{
-		if(((LaborCamp)game.boardFields.get(boardValue)).getOwner() != 10 && ((LaborCamp)game.boardFields.get(boardValue)).getOwner() != game.playerList.get(playersTurn).getPlayerNumber())
+		if(((LaborCamp)game.boardFields.get(boardValue)).getOwner() == 10)
+			{
+			buyProperty(game, mui, playersTurn, boardValue);		
+			}
+		else
 			{
 			mui.get1Button("Press to roll the dice " + game.playerList.get(playersTurn).getPlayerName(), "SHAKE");
 			shaker.setShake();
-			payRent(((LaborCamp)game.boardFields.get(boardValue)).getRent()*shaker.getShake(), game, playersTurn);			
-			}
-		else if (((LaborCamp)game.boardFields.get(boardValue)).getOwner() == 10)
-			{
-			buyPropperty(game, mui, playersTurn, boardValue);
+			payRent(((LaborCamp)game.boardFields.get(boardValue)).getRent()*shaker.getShake(), game, playersTurn);
 			}
 				
 		}

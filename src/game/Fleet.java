@@ -99,15 +99,17 @@ public class Fleet extends Ownable{
 		@Override
 		public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui, Shaker shake) 
 		{
-			if(((Fleet)game.boardFields.get(boardValue)).getOwner() != 10 && ((Fleet)game.boardFields.get(boardValue)).getOwner() != game.playerList.get(playersTurn).getPlayerNumber())
+			if(((Fleet)game.boardFields.get(boardValue)).getOwner() == 10)
 			{
-				ownedFleets = game.playerList.get(playersTurn).getOwnedFleets();
-				payRent(((Fleet)game.boardFields.get(boardValue)).getRent(), game, playersTurn);
+				buyProperty(game, mui, playersTurn, boardValue);
 			}
-			else if (((Fleet)game.boardFields.get(boardValue)).getOwner() == 10)
+			else
 			{
-				buyPropperty(game, mui, playersTurn, boardValue);
-			}	
+			ownedFleets = game.playerList.get(playersTurn).getOwnedFleets();
+			payRent(((Fleet)game.boardFields.get(boardValue)).getRent(), game, playersTurn);
+			}
+				
+				
 		}
 	
 	
