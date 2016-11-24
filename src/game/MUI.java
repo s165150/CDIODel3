@@ -26,13 +26,13 @@ public class MUI {
 		break;
 		case 4 : color = Color.ORANGE;
 		break;
-		case 5 : color = Color.YELLOW;
+		case 5 : color = Color.MAGENTA;
 		}
 		return color;
 	}
 	/**
-	 * @param createBoard Creates the GUI with a set
-	 * @param text The Text class where the fieldArray is located
+	 * Creates the GUI with a set of Fields
+	 * @param game The GameBoard Instance holding the array of fields
 	 */
 	public void createBoard(GameBoard game)
 	{
@@ -59,6 +59,12 @@ public class MUI {
 	GUI.create(fields);
 	}
 	
+	/**
+	 * Perfoms the actions of a turn in the GUI, by moving the car and showing the dice value rolled
+	 * @param game
+	 * @param v
+	 * @param shaker
+	 */
 	public void playTurn(GameBoard game, int v, Shaker shaker)
 	{
 		removeCar(game, v);
@@ -75,6 +81,12 @@ public class MUI {
 		return GUI.getUserString(msg);
 	}
 	
+	/**
+	 * If a fields is Ownable, gets the rent to be printed on the GUI field
+	 * @param game
+	 * @param c
+	 * @return
+	 */
 	String getRent(GameBoard game, int c)
 	{
 		String rent = "";
@@ -128,7 +140,6 @@ public class MUI {
 	}
 	
 	/**
-	 * 
 	 * sets the car on the start field again.
 	 */
 	public void setCarOnStart(GameBoard game, int v)

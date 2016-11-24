@@ -13,7 +13,7 @@ public class GameBoard {
 	MUI mui = new MUI();
 	Scanner input = new Scanner(System.in);
 	ArrayList<Field> boardFields = new ArrayList<Field>();
-	Text file = new Text("FieldText.txt");
+	Text file = new Text("FieldInfo.txt");
 	String[] textList = null;
 	public void createGameBoard()
 	{

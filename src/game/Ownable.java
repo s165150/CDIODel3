@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.Color;
+import java.io.IOException;
 
 public abstract class Ownable implements Field{
 	
@@ -12,6 +13,8 @@ public abstract class Ownable implements Field{
 		protected Color bgColor;
 		protected int price;
 		public int owner;
+		Text file = new Text("BuyProperty.txt");
+		String[] textList = null;
 	
 		/**
 		 * Creates a way to determine the rent of the propperty	
@@ -76,7 +79,12 @@ public abstract class Ownable implements Field{
 			
 			void buyProperty(GameBoard game, MUI mui, int playersTurn, int boardValue)
 			{
-				boolean buyPropperty = mui.get2Buttons("Do you want to buy this lot?", "yes", "no");
+				try {
+					textList = file.OpenFile();
+				} catch (IOException e) {
+					e.printStackTrace();
+				} 
+				boolean buyPropperty = mui.get2Buttons(textList[0], textList[1], textList[2]);
 				if (buyPropperty){
 					this.setOwner(game.playerList.get(playersTurn).getPlayerNumber());
 					game.playerList.get(playersTurn).getAccount().addBalance(-this.price);
