@@ -11,7 +11,7 @@ public class Game {
 	int i = 0;
 	int winner;
 	int index = 0;
-	Rule rule;
+	Rule rule = new Rule();
 	Text file = new Text("GameText.txt");
 	String[] textList = null;
 	
@@ -25,7 +25,11 @@ public class Game {
 		} 
 		
 	mui.createBoard(game);
-	game.createPlayerList(numOfPlayers = mui.getUserInt(textList[0]));
+	while(numOfPlayers < 2 || numOfPlayers > 6)
+	{
+		numOfPlayers = mui.getUserInt(textList[0]);
+	}
+	game.createPlayerList(numOfPlayers);
 	playLoop();
 	}
 	
@@ -36,6 +40,18 @@ public class Game {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
+		if(rule.winner(game, numOfPlayers, mui) == true)
+		{
+			for(Player player : game.playerList)
+			{
+				if(player.getAccount().getBalance() != 0)
+				{
+					mui.displayMidDescription(textList[0] + player.getPlayerName() + textList[1]);
+					mui.get1Button(textList[2], textList[3]);
+					System.exit(0);
+				}
+			}	
+		}
 		if (game.playerList.get(playersTurn).getAccount().getBalance() > 0)
 		{
 		mui.get1Button(textList[1] + game.playerList.get(playersTurn).getPlayerName(), textList[2]);
@@ -61,10 +77,8 @@ public class Game {
 					index++;
 				}
 			}
-		
 		}
-		
-		rule.winner(game, numOfPlayers, mui);
+
 	}
 	
 	private void playLoop()

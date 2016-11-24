@@ -56,11 +56,6 @@ public class GameBoard {
 	public void createPlayerList(int v)
 	{
 	numOfPlayers = v;
-	if (numOfPlayers < 2 || numOfPlayers > 6)
-	{
-		throw new IllegalArgumentException();
-	}
-
 	//This code is to verify that there is only being created the amount of users they asked for
 	//in this it also sets the players number and their position on the board, and how many fleets they own.
 	for(int i = 0; i < numOfPlayers; i++)
