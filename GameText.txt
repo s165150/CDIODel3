@@ -1,3 +1,7 @@
 Please enter the number of players
 Press to roll the dice 
 Roll
+Congratulations! 
+ has won the game!
+Game Over!
+Close Game

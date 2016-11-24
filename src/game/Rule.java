@@ -8,8 +8,6 @@ import java.io.IOException;
  * This class holds the responsibility to manage the rules of the game.
  */
 public class Rule {
-	Text file = new Text("RuleText.txt");
-	String[] textList = null;
 	boolean win;
 	
 	/**
@@ -18,11 +16,7 @@ public class Rule {
 	 */
 	public boolean winner(GameBoard game, int numOfPlayers, MUI mui)
 		{
-		try {
-			textList = file.OpenFile();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} 
+
 		int winner = numOfPlayers;
 		for(Player player : game.playerList)
 		{

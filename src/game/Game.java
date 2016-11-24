@@ -46,8 +46,8 @@ public class Game {
 			{
 				if(player.getAccount().getBalance() != 0)
 				{
-					mui.displayMidDescription(textList[0] + player.getPlayerName() + textList[1]);
-					mui.get1Button(textList[2], textList[3]);
+					mui.displayMidDescription(textList[3] + player.getPlayerName() + textList[4]);
+					mui.get1Button(textList[5], textList[6]);
 					System.exit(0);
 				}
 			}	
