@@ -1,0 +1,4 @@
+Congratulations! 
+ has won the game!"
+Game Over!
+Close Game

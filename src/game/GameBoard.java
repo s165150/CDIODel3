@@ -14,9 +14,9 @@ public class GameBoard {
 	Scanner input = new Scanner(System.in);
 	ArrayList<Field> boardFields = new ArrayList<Field>();
 	Text file = new Text("FieldText.txt");
+	String[] textList = null;
 	public void createGameBoard()
 	{
-		String[] textList = null;
 		try {
 			textList = file.OpenFile();
 		} catch (IOException e) {

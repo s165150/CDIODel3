@@ -1,11 +1,15 @@
 package game;
+
+import java.io.IOException;
+
 /**
  * @author Aleksander.
  * edited by Emil
  * This class holds the responsibility to manage the rules of the game.
  */
 public class Rule {
-
+	Text file = new Text("RuleText.txt");
+	String[] textList = null;
 	
 	/**
 	 * Rule used for determining the winner
@@ -13,6 +17,11 @@ public class Rule {
 	 */
 	public void winner(GameBoard game, int playersInGame, MUI mui)
 		{
+		try {
+			textList = file.OpenFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
 		int winner = playersInGame;
 		for(Player player : game.playerList)
 		{
@@ -26,8 +35,8 @@ public class Rule {
 			{
 				if(player.getAccount().getBalance() != 0)
 				{
-					mui.displayMidDescription("Congratulations! " + player.getPlayerName() + " has won the game!");
-					mui.get1Button("Game Over!", "Close game");
+					mui.displayMidDescription(textList[0] + player.getPlayerName() + textList[1]);
+					mui.get1Button(textList[2], textList[3]);
 					System.exit(0);
 				}
 			}

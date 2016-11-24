@@ -12,13 +12,12 @@ public class Game {
 	int winner;
 	int index = 0;
 	Rule rule;
-
+	Text file = new Text("GameText.txt");
+	String[] textList = null;
 	
 	
 	public void startGame()
 	{
-		Text file = new Text("GameText.txt");
-		String[] textList = null;
 		try {
 			textList = file.OpenFile();
 		} catch (IOException e) {
@@ -26,15 +25,20 @@ public class Game {
 		} 
 		
 	mui.createBoard(game);
-	game.createPlayerList(numOfPlayers = mui.getUserInt("Please enter the number of players"));
+	game.createPlayerList(numOfPlayers = mui.getUserInt(textList[0]));
 	playLoop();
 	}
 	
 	private void playerTurn(int playersTurn)
 	{
+		try {
+			textList = file.OpenFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
 		if (game.playerList.get(playersTurn).getAccount().getBalance() > 0)
 		{
-		mui.get1Button("Press to roll the dice " + game.playerList.get(playersTurn).getPlayerName(), "SHAKE");
+		mui.get1Button(textList[1] + game.playerList.get(playersTurn).getPlayerName(), textList[2]);
 		shaker.setShake();
 		game.playerList.get(playersTurn).setPosition(shaker.getShake());
 		mui.playTurn(game, playersTurn, shaker);
