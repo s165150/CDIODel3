@@ -10,15 +10,29 @@ public class Rule {
 	/**
 	 * Rule used for determining the winner
 	 * @param player
-	 * @return
 	 */
-	boolean winner(int playersInGame)
+	public void winner(GameBoard game, int playersInGame, MUI mui)
 		{
-
-			if(playersInGame == 1)
-			{
-				return true;
-			}
-			return false;
+		int winner = playersInGame;
+		for(Player player : game.playerList)
+		{
+			if(player.getAccount().getBalance() == 0)
+				winner = winner -1;
 		}
+
+		if(winner == 1)
+		{
+			for(Player player : game.playerList)
+			{
+				if(player.getAccount().getBalance() != 0)
+				{
+					mui.displayMidDescription("Congratulations! " + player.getPlayerName() + " has won the game!");
+					mui.get1Button("Game Over!", "Close game");
+					System.exit(0);
+				}
+			}
+		}
+		}
+
+	
 }

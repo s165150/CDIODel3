@@ -32,7 +32,6 @@ public class Game {
 	
 	private void playerTurn(int playersTurn)
 	{
-		winner = numOfPlayers;
 		if (game.playerList.get(playersTurn).getAccount().getBalance() > 0)
 		{
 		mui.get1Button("Press to roll the dice " + game.playerList.get(playersTurn).getPlayerName(), "SHAKE");
@@ -61,24 +60,7 @@ public class Game {
 		
 		}
 		
-		for(Player player : game.playerList)
-		{
-			if(player.getAccount().getBalance() == 0)
-				winner = winner -1;
-		}
-
-		if(winner == 1)
-		{
-			for(Player player : game.playerList)
-			{
-				if(player.getAccount().getBalance() != 0)
-				{
-					mui.displayMidDescription("Congratulations! " + player.getPlayerName() + " has won the game!");
-					mui.get1Button("Game Over!", "Close game");
-					System.exit(0);
-				}
-			}
-		}
+		rule.winner(game, numOfPlayers, mui);
 	}
 	
 	private void playLoop()
