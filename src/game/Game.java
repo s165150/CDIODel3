@@ -23,16 +23,16 @@ public class Game {
 			textList = file.OpenFile();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		} 
 		
 	mui.createBoard(game);
 	game.createPlayerList(numOfPlayers = mui.getUserInt("Please enter the number of players"));
-	winner = numOfPlayers;
 	playLoop();
 	}
 	
 	private void playerTurn(int playersTurn)
 	{
+		winner = numOfPlayers;
 		if (game.playerList.get(playersTurn).getAccount().getBalance() > 0)
 		{
 		mui.get1Button("Press to roll the dice " + game.playerList.get(playersTurn).getPlayerName(), "SHAKE");
@@ -61,22 +61,24 @@ public class Game {
 		
 		}
 		
-//		if(winner == 1)
-//		{
-//			String winPlayer = null;
-//			for(Player list : game.playerList)
-//			{
-//				if(list.getPlayerNumber() != 10)
-//				{
-//					winPlayer = list.getPlayerName();
-//				}
-//			}
-//			mui.displayMidDescription(winPlayer + "WON THE GAME!!!");
-//			mui.get1Button("Press to end the game", "end game");
-//			System.exit(1);
-//		}
-		
-		
+		for(Player player : game.playerList)
+		{
+			if(player.getAccount().getBalance() == 0)
+				winner = winner -1;
+		}
+
+		if(winner == 1)
+		{
+			for(Player player : game.playerList)
+			{
+				if(player.getAccount().getBalance() != 0)
+				{
+					mui.displayMidDescription("Congratulations! " + player.getPlayerName() + " has won the game!");
+					mui.get1Button("Game Over!", "Close game");
+					System.exit(0);
+				}
+			}
+		}
 	}
 	
 	private void playLoop()
