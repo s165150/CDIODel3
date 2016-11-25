@@ -3,12 +3,6 @@
  */
 
 package testCases;
-
-
-import java.awt.Color;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 import game.*;
 import org.junit.*;
 
@@ -16,7 +10,6 @@ public class TestCase2 {
 	
 	//Define attributes for test
 	private Player testPlayer1;
-	private MUI mui;
 	private GameBoard game = new GameBoard();
 	
 	//Precondition
@@ -33,8 +26,9 @@ public class TestCase2 {
 	@Test
 	public void testMove(){
 		
-		int expectedPosition = testPlayer1.setPosition(1);
-		int actualPosition = testPlayer1.getPosition()+2;
+		testPlayer1.setPosition(1);
+		int expectedPosition = 1;
+		int actualPosition = testPlayer1.getPosition();
 		Assert.assertEquals(expectedPosition, actualPosition);
 		
 	}
