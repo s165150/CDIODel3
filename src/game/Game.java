@@ -29,7 +29,6 @@ public class Game {
 		} 
 		
 	mui.createBoard(game);
-	game.toString();
 	while(numOfPlayers < 2 || numOfPlayers > 6)
 	{
 		numOfPlayers = mui.getUserInt(textList[0]);
