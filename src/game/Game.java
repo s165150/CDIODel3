@@ -33,7 +33,7 @@ public class Game {
 	{
 		numOfPlayers = mui.getUserInt(textList[0]);
 	}
-	game.createPlayerList(numOfPlayers);
+	game.createPlayerList(numOfPlayers, mui);
 	playLoop();
 	}
 	

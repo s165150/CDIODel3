@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 
 public class GameBoard {
 
-	private MUI mui = new MUI();
 	protected ArrayList<Field> boardFields = new ArrayList<Field>();
 	private Text file = new Text("FieldInfo.txt");
 	private String[] textList = null;
@@ -57,7 +56,7 @@ public class GameBoard {
 	 * Creates the playerlist array, depending on the size of the players in the game.
 	 * @param v User input used to define the number of players in the game.
 	 */
-	public void createPlayerList(int v)
+	public void createPlayerList(int v, MUI mui)
 	{
 	numOfPlayers = v;
 	//This code is to verify that there is only being created the amount of users they asked for
