@@ -1,5 +1,8 @@
 package game;
-
+/**
+ * @Author Aleksander & Emil. 
+ * This class holds the responsibility of the Refuge Field.
+ */
 import java.awt.Color;
 
 public class Refuge implements Field{

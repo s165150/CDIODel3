@@ -1,5 +1,8 @@
 package game;
-
+/**
+ * @Author Aleksander. 
+ * This class holds the responsibility of the LaborCamp.
+ */
 import java.awt.Color;
 
 public class LaborCamp extends Ownable {
@@ -82,11 +85,19 @@ public class LaborCamp extends Ownable {
 		{
 			return baseRent;
 		}
-			
+	/**
+	 * This instance of landOnField, works by first, checking if the Field we are currently on, is owned by anyone.
+	 * If it is, then it starts the buyPropperty method.
+	 * If not, it checks, if the owner is not the player currently taking their turn.
+	 * If that check comes back true, it start with:
+	 * Having the player roll the dies.
+	 * Afterwards it checks how many LaborCamp fields the owner of this field owns.
+	 * After those checks, it initiates the payRent method, with the value from the shake, owned LaborCamps and the rent of the field.
+	 */
 	@Override
 	public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui, Shaker shaker) 
 		{
-		if(((LaborCamp)game.boardFields.get(boardValue)).getOwner() == 10)
+		if(((LaborCamp)game.boardFields.get(boardValue)).getOwner() == owned)
 			{
 			buyProperty(game, mui, playersTurn, boardValue);		
 			}

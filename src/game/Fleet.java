@@ -1,5 +1,8 @@
 package game;
-
+/**
+ * @Author Aleksander.
+ * This class holds the responsibility of the Fleet field.
+ */
 import java.awt.Color;
 
 public class Fleet extends Ownable{

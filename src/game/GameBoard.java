@@ -1,20 +1,19 @@
 package game;
-
+/**
+ * @Author Aleksander & Emil.
+ * This class holds the responsibility of managing the GameBoard array and Playerlist array.
+ */
 import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
 
 
 public class GameBoard {
 
-	MUI mui = new MUI();
-	Scanner input = new Scanner(System.in);
+	private MUI mui = new MUI();
 	ArrayList<Field> boardFields = new ArrayList<Field>();
-	Text file = new Text("FieldInfo.txt");
-	String[] textList = null;
+	private Text file = new Text("FieldInfo.txt");
+	private String[] textList = null;
 	public void createGameBoard()
 	{
 		try {
@@ -53,6 +52,10 @@ public class GameBoard {
 	ArrayList<Player> playerList = new ArrayList<Player>();
 
 	int numOfPlayers;
+	/**
+	 * Creates the playerlist array, depending on the size of the players in the game.
+	 * @param v User input used to define the number of players in the game.
+	 */
 	public void createPlayerList(int v)
 	{
 	numOfPlayers = v;

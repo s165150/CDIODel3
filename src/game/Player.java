@@ -1,7 +1,7 @@
 package game;
 /**
  * @author Jens & Morten C
- * Edited by Aleksander
+ * Edited by Aleksander for CDIO3
  * Player class is created to keep track of the player's name, and to create an instance of the Account class.
  */
 public class Player {

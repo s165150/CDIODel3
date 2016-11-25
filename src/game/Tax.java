@@ -1,7 +1,10 @@
 package game;
-
+/**
+ * @Author Aleksander & Emil.  
+ * This class holds the responsibility of the Tax Field.
+ */
 import java.awt.Color;
-import java.util.Scanner;
+
 
 public class Tax implements Field {
 	
@@ -91,16 +94,15 @@ public class Tax implements Field {
 		{
 			return bgColor;
 		}
-		int getTaxAmount()
+		private int getTaxAmount()
 		{
 			return taxAmount;
 		}
-		double getTaxRate()
+		private double getTaxRate()
 		{
 			return taxRate;
 		}
 		
-		Scanner input = new Scanner(System.in);
 	@Override
 	public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui, Shaker shake) {
 		if(((Tax)game.boardFields.get(boardValue)).getTaxRate() > 0)

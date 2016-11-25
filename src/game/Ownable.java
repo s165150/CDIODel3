@@ -1,5 +1,8 @@
 package game;
-
+/**
+ * @Author Aleksander & Emil. 
+ * This class holds the responsibility of the abstract class Ownable.
+ */
 import java.awt.Color;
 import java.io.IOException;
 
@@ -12,10 +15,10 @@ public abstract class Ownable implements Field{
 		protected String fieldPicture;
 		protected Color bgColor;
 		protected int price;
-		public int owner;
-		Text file = new Text("BuyProperty.txt");
-		String[] textList = null;
-	
+		protected int owner;
+		protected Text file = new Text("BuyProperty.txt");
+		protected String[] textList = null;
+		protected int owned = 10;
 		/**
 		 * Creates a way to determine the rent of the propperty	
 		 * @return

@@ -1,7 +1,7 @@
 package game;
 /**
  * @author Aleksander and Morten N
- * Edited by Emil and Nick
+ * Edited by Emil and Aleksander in CDIO3
  * This class holds the responsibility to shake the dies.
  */
 public class Shaker {

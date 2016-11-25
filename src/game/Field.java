@@ -1,5 +1,9 @@
 package game;
-
+/**
+ * @Author Aleksander.
+ * This class creates  the interface Field, which has the responsibility of creating
+ * abstract methods to be implemented in the childclasses.
+ */
 import java.awt.Color;
 
 public interface Field {

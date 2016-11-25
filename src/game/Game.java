@@ -1,19 +1,22 @@
 package game;
-
+/**
+ * @Author Aleksander & Emil.
+ * This class holds the responsibility to control the game flow,
+ * and control the other classes
+ */
 import java.io.IOException;
 
 public class Game {
 	
-	GameBoard game = new GameBoard();
-	MUI mui = new MUI();
-	Shaker shaker = new Shaker();
-	int numOfPlayers;
-	int i = 0;
-	int winner;
-	int index = 0;
-	Rule rule = new Rule();
-	Text file = new Text("GameText.txt");
-	String[] textList = null;
+	private GameBoard game = new GameBoard();
+	private MUI mui = new MUI();
+	private Shaker shaker = new Shaker();
+	private int numOfPlayers;
+	private int i = 0;
+	private int index = 0;
+	private Rule rule = new Rule();
+	private Text file = new Text("GameText.txt");
+	private String[] textList = null;
 	
 	
 	public void startGame()

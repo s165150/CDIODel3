@@ -1,14 +1,11 @@
 package game;
-
-import java.io.IOException;
-
 /**
  * @author Aleksander.
- * edited by Emil
+ * Edited by Emil in CDIO3
  * This class holds the responsibility to manage the rules of the game.
  */
 public class Rule {
-	boolean win;
+	private boolean win;
 	
 	/**
 	 * Rule used for determining the winner

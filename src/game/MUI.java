@@ -1,6 +1,6 @@
 package game;
 /**
- * @author Emil 
+ * @author Emil  
  * This class holds the responsibility to call the methods from the GUI.
  */
 import desktop_resources.GUI;
@@ -76,7 +76,7 @@ public class MUI {
 	 * @param msg The message shown to the user
 	 * @return A string from the user
 	 */
-	String getUserString(String msg)
+	public String getUserString(String msg)
 	{
 		return GUI.getUserString(msg);
 	}
@@ -87,7 +87,7 @@ public class MUI {
 	 * @param c
 	 * @return
 	 */
-	String getRent(GameBoard game, int c)
+	public String getRent(GameBoard game, int c)
 	{
 		String rent = "";
 		if(game.boardFields.get(c) instanceof Ownable == true)
@@ -101,7 +101,7 @@ public class MUI {
 	 * @param msg The message shown to the user
 	 * @return An integer from the user
 	 */
-	int getUserInt(String msg)
+	public int getUserInt(String msg)
 	{
 		return GUI.getUserInteger(msg);
 	}
@@ -109,7 +109,7 @@ public class MUI {
 	 * Adds a player to the board
 	 * @param color The color of the players car
 	 */
-	void addPlayer(GameBoard game, int v,int c)
+	public void addPlayer(GameBoard game, int v,int c)
 	{
 		Car car = new Car.Builder().secondaryColor(getColor(c)).build();
 		GUI.addPlayer(game.playerList.get(v).getPlayerName(), game.playerList.get(v).getAccount().getBalance(),car);
@@ -134,7 +134,7 @@ public class MUI {
 	/**
 	 * Sets a car on a given field position (-1) on the board
 	 */
-	void setCar(GameBoard game, int v)
+	public void setCar(GameBoard game, int v)
 	{
 		GUI.setCar(game.playerList.get(v).getPosition(), game.playerList.get(v).getPlayerName());
 	}
@@ -157,7 +157,7 @@ public class MUI {
 	/**
 	 * Shows a description of the actions performed on a turn in the middle of the board
 	 */
-	void displayMidDescription(String text)
+	public void displayMidDescription(String text)
 	{
 		GUI.displayChanceCard(text);
 	}
@@ -166,7 +166,7 @@ public class MUI {
 	 * @param msg The general message
 	 * @param button The message on the button
 	 */
-	void get1Button(String msg,String button)
+	public void get1Button(String msg,String button)
 	{
 		GUI.getUserButtonPressed(msg, button);
 	}
@@ -177,7 +177,7 @@ public class MUI {
 	 * @param truebutton The message on the true button
 	 * @param falsebutton The message on the false button
 	 */
-	boolean get2Buttons(String msg, String truebutton, String falsebutton)
+	public boolean get2Buttons(String msg, String truebutton, String falsebutton)
 	{
 		return GUI.getUserLeftButtonPressed(msg, truebutton, falsebutton);
 	}
@@ -187,12 +187,12 @@ public class MUI {
 	 * @param board
 	 * @param player
 	 */
-	void setOwner(int pos, String player)
+	public void setOwner(int pos, String player)
 	{
 	GUI.setOwner(pos, player);
 	}
 	
-	void removeOwner(int pos)
+	public void removeOwner(int pos)
 	{
 		GUI.removeOwner(pos);
 	}

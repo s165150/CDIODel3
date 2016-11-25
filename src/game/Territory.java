@@ -1,5 +1,8 @@
 package game;
-
+/**
+ * @Author Aleksander & Emil.  
+ * This class holds the responsibility of the Territory Field.
+ */
 import java.awt.Color;
 
 public class Territory extends Ownable {
