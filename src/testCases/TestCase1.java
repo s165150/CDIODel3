@@ -21,7 +21,7 @@ public class TestCase1 {
 	private MUI mui;
 	private GameBoard game = new GameBoard();
 	
-	//Precondition - Test case 1.1
+	//Precondition - Test case 1
 	@Before
 	public void setUp(){
 		//Create playerArray, testPlayer1 and adding him to the array and set field to not owned
