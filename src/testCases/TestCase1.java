@@ -22,9 +22,14 @@ public class TestCase1 {
 	//Precondition - Test case 1.1
 	@Before
 	public void setUp() throws Exception {
+		
+		//Create Gamboard, testPlayer1 and set field to not owned
 		game.createGameBoard();
 		testPlayer1 = new Player ("testPlayer1", 1, 1, 0);
-		((Ownable)game.boardFields.get(2)).setOwner(10);
+		((Ownable)game.getBoardFieldsArray().get(2)).getOwner();
+		
+		//Assert
+		assertEquals(10, ((Ownable)game.getBoardFieldsArray().get(2)).getOwner());
 		
 	}
 	
@@ -32,9 +37,11 @@ public class TestCase1 {
 	@Test
 	public void test() {
 		
+		//testPlayer1 buy the field and pay for the field
+		((Ownable)game.getBoardFieldsArray().get(2).
 	}
 	
-	//Postcondation Test case 1.1
+	//Postcondition Test case 1.1
 	@After
 	public void after(){
 		
