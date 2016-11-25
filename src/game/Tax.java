@@ -4,10 +4,13 @@ package game;
  * This class holds the responsibility of the Tax Field.
  */
 import java.awt.Color;
+import java.io.IOException;
 
 
 public class Tax implements Field {
 	
+	private Text file = new Text("TaxText.txt");
+	private String[] textList = null;
 	private String fieldTitle, fieldDescription, fieldSubText, fieldPicture;
 	private Color bgColor;
 	private int taxAmount;
@@ -110,9 +113,14 @@ public class Tax implements Field {
 		 */ 
 	@Override
 	public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui, Shaker shake) {
+		try {
+			textList = file.OpenFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		if(((Tax)game.boardFields.get(boardValue)).getTaxRate() > 0)
 			{
-			boolean taxChoice = mui.get2Buttons("Do you want to pay 4000 or 10% of your current money?", "4000", "10%");
+			boolean taxChoice = mui.get2Buttons(textList[0], "4000", "10%");
 				if (taxChoice)
 				{
 				game.playerList.get(playersTurn).getAccount().addBalance(-((Tax)game.boardFields.get(boardValue)).getTaxAmount());

@@ -4,9 +4,12 @@ package game;
  * This class holds the responsibility of the LaborCamp.
  */
 import java.awt.Color;
+import java.io.IOException;
 
 public class LaborCamp extends Ownable {
 	
+	private Text file = new Text("LabourText.txt");
+	private String[] textList = null;
 	/**
 	 * Contructs a field of the LabourCamp type.
 	 * If owned by a player all other players must pay a amount calculated by rolling the dice and multiplying the roll with the baseRent
@@ -97,13 +100,18 @@ public class LaborCamp extends Ownable {
 	@Override
 	public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui, Shaker shaker) 
 		{
+		try {
+			textList = file.OpenFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		if(((LaborCamp)game.boardFields.get(boardValue)).getOwner() == owned)
 			{
 			buyProperty(game, mui, playersTurn, boardValue);		
 			}
 		else if(((LaborCamp)game.boardFields.get(boardValue)).getOwner() != game.playerList.get(playersTurn).getPlayerNumber())
 			{
-			mui.get1Button("Press to roll the dice " + game.playerList.get(playersTurn).getPlayerName(), "SHAKE");
+			mui.get1Button(textList[0] + game.playerList.get(playersTurn).getPlayerName(), textList[1]);
 			shaker.setShake();
 			mui.setDice(shaker);
 			int ownedLaborCamps = 0;

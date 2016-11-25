@@ -1,5 +1,5 @@
-Welcome message:
-1
+Enter Player 
+'s name
 
 Titles:
 Tribe

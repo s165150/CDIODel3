@@ -63,7 +63,7 @@ public class GameBoard {
 	//in this it also sets the players number and their position on the board, and how many fleets they own.
 	for(int i = 0; i < numOfPlayers; i++)
 	{
-	    String name = mui.getUserString("Enter Player " + (i+1) + "s name");
+	    String name = mui.getUserString(textList[0] + (i+1) + textList[1]);
 	    Player plr = new Player(name, i, 1, 0);
 	    playerList.add(plr);
 	    mui.addPlayer(this, i,i);
