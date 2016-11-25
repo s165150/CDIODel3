@@ -21,6 +21,7 @@ public class Game {
 	
 	public void startGame()
 	{
+		
 		try {
 			textList = file.OpenFile();
 		} catch (IOException e) {
@@ -28,6 +29,7 @@ public class Game {
 		} 
 		
 	mui.createBoard(game);
+	game.toString();
 	while(numOfPlayers < 2 || numOfPlayers > 6)
 	{
 		numOfPlayers = mui.getUserInt(textList[0]);

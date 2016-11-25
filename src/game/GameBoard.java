@@ -6,6 +6,8 @@ package game;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 
 public class GameBoard {
@@ -71,6 +73,17 @@ public class GameBoard {
 	}
 	}
 	
-
-	
+	  public String toString(int v)
+	    {
+	        return "Title: " + boardFields.get(v).getFieldTitle() + ". Description: " + boardFields.get(v).getFieldDescription() + ". Price: " + boardFields.get(v).getFieldSubText();
+	    }
+	  public void toStringArray()
+	  {
+		  createGameBoard();
+		  int boardPieces = boardFields.size();
+		  for(int num = 2; num < boardPieces; num++)
+		  {
+			  System.out.println(toString(num));
+		  }
+	  }
 }
