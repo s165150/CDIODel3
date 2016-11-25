@@ -5,13 +5,11 @@ import java.io.IOException;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-//
-//		Game game = new Game();
-//
-//		game.startGame();
-		
-		GameBoard game = new GameBoard();
-		game.toStringArray();
+
+		Game game = new Game();
+
+		game.startGame();
+
 		
 		
 	}
