@@ -1,3 +1,7 @@
+/**
+ * @author Morten N
+ */
+
 package test;
 
 import org.junit.runner.RunWith;

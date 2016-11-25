@@ -55,6 +55,11 @@ public class ShakerTestFrequency {
 		percentEleven = (float)eleven/controlCount*100;
 		percentTwelve = (float)twelve/controlCount*100;
 		
+		//Print test type
+		System.out.println("-----------------------------------------------------------------------");
+		System.out.println("This will test the shaker frequency requriments");
+		System.out.println("-----------------------------------------------------------------------");
+		
 		//Printout to confirm result
 		System.out.println("Frequency and result of 330000 shakes");
 		System.out.println("Total of Two: " + two + " - The frequency is " + percentTwo + "% - Should be around 2.78%");

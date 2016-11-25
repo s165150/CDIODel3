@@ -14,6 +14,11 @@ public class BalanceTest {
 		//Define attributes for test
 		Player testPlayer = new Player("Test Player", 1, 1, 1);
 		
+		//Print test type
+		System.out.println("-----------------------------------------------------------------------");
+		System.out.println("This will test the balance requriments");
+		System.out.println("-----------------------------------------------------------------------");
+		
 		//Set positive and negative test balance
 		System.out.println("Balance start at 30000");
 		System.out.println("getBalance returned " + testPlayer.getAccount().getBalance() + " points");
