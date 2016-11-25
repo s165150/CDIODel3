@@ -23,7 +23,7 @@ public class LaborCamp extends Ownable {
 	 * @param cost The buy price of the field
 	 * @param payamount The price of landing on the field if owned
 	 */
-	LaborCamp(String title, String description, String subText, String picture, Color color, int playerNumber,
+	public LaborCamp(String title, String description, String subText, String picture, Color color, int playerNumber,
 			int cost,int rent) 
 	{
 		super(title, description, subText, picture, color, playerNumber, cost);
@@ -123,7 +123,7 @@ public class LaborCamp extends Ownable {
 				}
 			}
 			payRent((((LaborCamp)game.boardFields.get(boardValue)).getRent()*shaker.getShake()*ownedLaborCamps), game, playersTurn);
-			receiveRent(((LaborCamp)game.boardFields.get(boardValue)).getRent(), game);
+			receiveRent((((LaborCamp)game.boardFields.get(boardValue)).getRent()*shaker.getShake()*ownedLaborCamps), game);
 			}
 				
 		}

@@ -56,6 +56,11 @@ public class Shaker {
 		return die2;
 	}
 	
+	public int setShakeValue(int value)
+	{
+		shakeValue = value;
+		return shakeValue;
+	}
 	/**
 	 * Converts the shakeValue from an int to a string.
 	 */
