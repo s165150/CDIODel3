@@ -33,7 +33,7 @@ public class LandOnFieldTax {
 	game.getBoardFieldsArray().add(tax300);
 	this.tax10percent = new Tax("2. Skat", "Skat 10%", null, null, null, 0, 0.10);
 	game.getBoardFieldsArray().add(tax10percent);
-	this.taxNeg200 = new Tax("3. Skat", "Skat -300", null, null, null, -200, -200);
+	this.taxNeg200 = new Tax("3. Skat", "Skat -200", null, null, null, -200, -200);
 	game.getBoardFieldsArray().add(taxNeg200);
 	}
 

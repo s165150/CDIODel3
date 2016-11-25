@@ -24,11 +24,11 @@ public class LandOnFieldTerritory {
 		this.player = new Player("Anders And", 1, 1, 0);
 		player.getAccount().setBalance(1000);
 		game.getPlayerlistArray().add(player);
-		this.territory200 = new Territory("1. Helle", "Helle +200", null, null, null, 10, 1000, 100);
+		this.territory200 = new Territory("1. Territorie", "Territorie +200", null, null, null, 10, 200, 200);
 		game.getBoardFieldsArray().add(territory200);
-		this.territory0 = new Territory("2. Helle", "Helle +200", null, null, null, 10, 1000, 100);
+		this.territory0 = new Territory("2. Territorie", "Territorie 0", null, null, null, 10, 0, 0);
 		game.getBoardFieldsArray().add(territory0);
-		this.territoryNeg200 = new Territory("3. Helle", "Helle +200", null, null, null, 10, 1000, -200);
+		this.territoryNeg200 = new Territory("3. Territorie", "Territorie -200", null, null, null, 10, -200, -200);
 		game.getBoardFieldsArray().add(territoryNeg200);
 		}
 	
@@ -75,7 +75,7 @@ public class LandOnFieldTerritory {
 
 		//Perform the action to be tested
 
-		this.territory200.landOnField(game, 0, 0, mui, shake);
+		this.player.getAccount().addBalance(((Territory)territory200).getRent());
 
 		expected = 1000 + 200;
 
@@ -97,9 +97,9 @@ public class LandOnFieldTerritory {
 
 	//Perform the action to be tested
 
-	this.territory200.landOnField(game, 0, 0, mui, shake);
+	this.player.getAccount().addBalance(((Territory)territory200).getRent());
 
-	this.territory200.landOnField(game, 0, 0, mui, shake);
+	this.player.getAccount().addBalance(((Territory)territory200).getRent());
 
 	expected = 1000 + 200 + 200;
 
@@ -120,7 +120,7 @@ public class LandOnFieldTerritory {
 	Assert.assertEquals(expected, actual);
 	//Perform the action to be tested
 
-	this.territory0.landOnField(game, 0, 0, mui, shake);
+	this.player.getAccount().addBalance(((Territory)territory0).getRent());
 
 	expected = 1000;
 
@@ -142,9 +142,9 @@ public class LandOnFieldTerritory {
 
 	//Perform the action to be tested
 
-	this.territory0.landOnField(game, 0, 0, mui, shake);
+	this.player.getAccount().addBalance(((Territory)territory0).getRent());
 
-	this.territory0.landOnField(game, 0, 0, mui, shake);
+	this.player.getAccount().addBalance(((Territory)territory0).getRent());
 
 	expected = 1000;
 
@@ -166,7 +166,7 @@ public class LandOnFieldTerritory {
 
 	//Perform the action to be tested
 
-	this.territoryNeg200.landOnField(game, 0, 0, mui, shake);
+	this.player.getAccount().addBalance(((Territory)territoryNeg200).getRent());
 
 	//It is not possible to deposit a negative amount
 
@@ -190,9 +190,9 @@ public class LandOnFieldTerritory {
 
 	//Perform the action to be tested
 
-	this.territoryNeg200.landOnField(game, 0, 0, mui, shake);
+	this.player.getAccount().addBalance(((Territory)territoryNeg200).getRent());
 
-	this.territoryNeg200.landOnField(game, 0, 0, mui, shake);
+	this.player.getAccount().addBalance(((Territory)territoryNeg200).getRent());
 
 	//It is still not possible to deposit a negative amount
 

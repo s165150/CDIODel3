@@ -84,6 +84,10 @@ public class Territory extends Ownable {
 		@Override 
 		public int getRent() 
 		{
+			if(rent < 1)
+			{
+				rent = 0;
+			}
 			return rent;
 		}
 		/**

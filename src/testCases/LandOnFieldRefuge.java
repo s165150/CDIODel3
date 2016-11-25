@@ -27,9 +27,9 @@ public class LandOnFieldRefuge {
 	game.getPlayerlistArray().add(player);
 	this.refuge200 = new Refuge("1. Helle", "Helle +200", null, null, null, 200);
 	game.getBoardFieldsArray().add(refuge200);
-	this.refuge0 = new Refuge("2. Helle", "Helle +200", null, null, null, 0);
+	this.refuge0 = new Refuge("2. Helle", "Helle 0", null, null, null, 0);
 	game.getBoardFieldsArray().add(refuge0);
-	this.refugeNeg200 = new Refuge("3. Helle", "Helle +200", null, null, null, -200);
+	this.refugeNeg200 = new Refuge("3. Helle", "Helle -200", null, null, null, -200);
 	game.getBoardFieldsArray().add(refugeNeg200);
 	}
 
