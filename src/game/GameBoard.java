@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class GameBoard {
 
 	private MUI mui = new MUI();
-	private ArrayList<Field> boardFields = new ArrayList<Field>();
+	protected ArrayList<Field> boardFields = new ArrayList<Field>();
 	private Text file = new Text("FieldInfo.txt");
 	private String[] textList = null;
 	public void createGameBoard()

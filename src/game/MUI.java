@@ -36,7 +36,6 @@ public class MUI {
 	 */
 	public void createBoard(GameBoard game)
 	{
-		game.createGameBoard();
 	Field[] fields = new Field[22];
 	fields[0] = new Start.Builder().
 			setTitle("Start").

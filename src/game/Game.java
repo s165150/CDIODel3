@@ -27,8 +27,8 @@ public class Game {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
-		
-	mui.createBoard(game);
+	game.createGameBoard();
+	mui.createBoard(this.game);
 	while(numOfPlayers < 2 || numOfPlayers > 6)
 	{
 		numOfPlayers = mui.getUserInt(textList[0]);
