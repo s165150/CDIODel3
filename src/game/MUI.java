@@ -45,14 +45,14 @@ public class MUI {
 			setSubText(null).
 			build();
 	
-	for(int i = 2 ; i < game.boardFields.size(); i++)
+	for(int i = 2 ; i < game.getBoardFieldsArray().size(); i++)
 	{
 	fields[i-1] = new Shipping.Builder().
-			setTitle(game.boardFields.get(i).getFieldTitle()).
-			setSubText(game.boardFields.get(i).getFieldSubText()).
-			setDescription(game.boardFields.get(i).getFieldDescription()).
-			setBgColor(game.boardFields.get(i).getBgColor()).
-			setPicture(game.boardFields.get(i).getFieldPicture()).
+			setTitle(game.getBoardFieldsArray().get(i).getFieldTitle()).
+			setSubText(game.getBoardFieldsArray().get(i).getFieldSubText()).
+			setDescription(game.getBoardFieldsArray().get(i).getFieldDescription()).
+			setBgColor(game.getBoardFieldsArray().get(i).getBgColor()).
+			setPicture(game.getBoardFieldsArray().get(i).getFieldPicture()).
 			setRent(getRent(game,i)).
 			build();
 	}
@@ -90,9 +90,9 @@ public class MUI {
 	public String getRent(GameBoard game, int c)
 	{
 		String rent = "";
-		if(game.boardFields.get(c) instanceof Ownable == true)
+		if(game.getBoardFieldsArray().get(c) instanceof Ownable == true)
 		{
-			rent = "Rent: " + Integer.toString(((Ownable)game.boardFields.get(c)).getRent());
+			rent = "Rent: " + Integer.toString(((Ownable)game.getBoardFieldsArray().get(c)).getRent());
 		}
 		return rent;
 	}

@@ -75,7 +75,11 @@ public class GameBoard {
 	
 	  public String toString(int v)
 	    {
-	        return "Title: " + boardFields.get(v).getFieldTitle() + ". Description: " + boardFields.get(v).getFieldDescription() + ". Price: " + boardFields.get(v).getFieldSubText();
+		  String general = "Title: " + boardFields.get(v).getFieldTitle() + "\nDescription: " + boardFields.get(v).getFieldDescription() + "\nPicture Path: " + boardFields.get(v).getFieldPicture();
+	      String ownable = "";
+	    		  if(boardFields.get(v) instanceof Ownable)
+	    			  ownable = "Price: " + ((Ownable)boardFields.get(v)).getPrice() + "\nRent: " + ((Ownable)boardFields.get(v)).getRent() + "\n";
+	      return general + ownable;
 	    }
 	  public void toStringArray()
 	  {
@@ -83,7 +87,7 @@ public class GameBoard {
 		  int boardPieces = boardFields.size();
 		  for(int num = 2; num < boardPieces; num++)
 		  {
-			  System.out.println(toString(num));
+			 System.out.println(toString(num));
 		  }
 	  }
 	  public ArrayList<Field> getBoardFieldsArray()
