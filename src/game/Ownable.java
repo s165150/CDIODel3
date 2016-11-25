@@ -97,9 +97,11 @@ public abstract class Ownable implements Field{
 			
 		public	void payRent(int rent, GameBoard game, int playersTurn)
 			{
-				game.playerList.get(playersTurn).getAccount().addBalance(-rent);
-				game.playerList.get(getOwner()).getAccount().addBalance(rent);	
+				game.playerList.get(playersTurn).getAccount().addBalance(-rent);	
 			}
-			
+		public void receiveRent(int rent, GameBoard game)
+		{
+			game.playerList.get(getOwner()).getAccount().addBalance(rent);	
+		}
 }
 

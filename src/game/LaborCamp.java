@@ -123,6 +123,7 @@ public class LaborCamp extends Ownable {
 				}
 			}
 			payRent((((LaborCamp)game.boardFields.get(boardValue)).getRent()*shaker.getShake()*ownedLaborCamps), game, playersTurn);
+			receiveRent(((LaborCamp)game.boardFields.get(boardValue)).getRent(), game);
 			}
 				
 		}

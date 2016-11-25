@@ -12,11 +12,12 @@ import java.util.stream.Collectors;
 
 public class GameBoard {
 
-	protected ArrayList<Field> boardFields = new ArrayList<Field>();
+	public ArrayList<Field> boardFields = new ArrayList<Field>();
 	private Text file = new Text("FieldInfo.txt");
 	private String[] textList = null;
 	private int numOfPlayers;
 	public void createGameBoard()
+	
 	{
 		try {
 			textList = file.OpenFile();
@@ -51,7 +52,7 @@ public class GameBoard {
 /**
  * Creates the arraylist of the players in the game.
  */
-	ArrayList<Player> playerList = new ArrayList<Player>();
+	public ArrayList<Player> playerList = new ArrayList<Player>();
 	/**
 	 * Creates the playerlist array, depending on the size of the players in the game.
 	 * @param v User input used to define the number of players in the game.
@@ -91,5 +92,9 @@ public class GameBoard {
 	  public ArrayList<Field> getBoardFieldsArray()
 	  {
 		  return boardFields;
+	  }
+	  public ArrayList<Player> getPlayerlistArray()
+	  {
+		  return playerList;
 	  }
 }

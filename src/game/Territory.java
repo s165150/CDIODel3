@@ -82,7 +82,7 @@ public class Territory extends Ownable {
 			return bgColor;
 		}
 		@Override 
-		int getRent() 
+		public int getRent() 
 		{
 			return rent;
 		}
@@ -101,7 +101,8 @@ public class Territory extends Ownable {
 			}
 			else
 			{
-				payRent(((Territory)game.boardFields.get(boardValue)).getRent(), game, playersTurn);	
+				payRent(((Territory)game.boardFields.get(boardValue)).getRent(), game, playersTurn);
+				receiveRent(((Territory)game.boardFields.get(boardValue)).getRent(), game);
 			}
 				
 		}
