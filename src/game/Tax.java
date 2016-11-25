@@ -25,7 +25,7 @@ public class Tax implements Field {
 	 * @param color The background color of the field, is only shown if no/transparent picture is chosen
 	 * @param amount The fixed tax amount to be payed
 	 */
-	Tax(String title, String description, String subText, String picture, Color color, int amount,double rate)
+	public Tax(String title, String description, String subText, String picture, Color color, int amount,double rate)
 	{
 		fieldTitle = title;
 		fieldDescription = description;
@@ -97,13 +97,28 @@ public class Tax implements Field {
 		{
 			return bgColor;
 		}
+
 		private int getTaxAmount()
 		{
+			if(taxAmount < -1)
+			{
+				taxAmount = 0;
+			}
 			return taxAmount;
 		}
 		private double getTaxRate()
 		{
 			return taxRate;
+		}
+		
+		public void payTaxAmount(GameBoard game, int boardValue, int playersTurn)
+		{
+			game.playerList.get(playersTurn).getAccount().addBalance(-((Tax)game.boardFields.get(boardValue)).getTaxAmount());
+		}
+		
+		public void payTaxRate(GameBoard game, int boardValue, int playersTurn)
+		{
+			game.playerList.get(playersTurn).getAccount().addBalance(-(int)((double)(game.playerList.get(playersTurn).getAccount().getBalance())*((Tax)game.boardFields.get(boardValue)).getTaxRate()));
 		}
 		/**
 		 * This instance of landOnField, works by first, checking if the tax rate is above 0.
@@ -123,11 +138,11 @@ public class Tax implements Field {
 			boolean taxChoice = mui.get2Buttons(textList[0], "4000", "10%");
 				if (taxChoice)
 				{
-				game.playerList.get(playersTurn).getAccount().addBalance(-((Tax)game.boardFields.get(boardValue)).getTaxAmount());
+				payTaxAmount(game, boardValue, playersTurn);
 				}
 				else
 				{
-				game.playerList.get(playersTurn).getAccount().addBalance(-(int)((double)(game.playerList.get(playersTurn).getAccount().getBalance())*((Tax)game.boardFields.get(boardValue)).getTaxRate()));
+					payTaxRate(game, boardValue, playersTurn);
 				}
 			}
 		else game.playerList.get(playersTurn).getAccount().addBalance(-((Tax)game.boardFields.get(boardValue)).getTaxAmount());
