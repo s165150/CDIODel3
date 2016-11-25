@@ -98,7 +98,13 @@ public class Fleet extends Ownable{
 			}
 			return rent;
 		}
-		
+		/**
+		 * This instance of landOnField, works by first, checking if the Field we are currently on, is owned by anyone.
+		 * If it isnt, then it starts the buyPropperty method,
+		 * After it sets the Players owned fleets to +1
+		 * If it is, it checks, how many other Fleet the owner has.
+		 * it then takes that value, and determines the rent.
+		 */
 		@Override
 		public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui, Shaker shake) 
 		{

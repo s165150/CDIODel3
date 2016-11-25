@@ -90,7 +90,9 @@ public class Refuge implements Field{
 		{
 			return bonus;
 		}
-
+		/**
+		 * This instance of landOnField, works by just rewarding the player on the field with the bonus.
+		 */
 	@Override
 	public void landOnField(GameBoard game, int b, int p, MUI mui, Shaker shake) 
 	{

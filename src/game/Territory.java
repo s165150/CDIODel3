@@ -86,7 +86,12 @@ public class Territory extends Ownable {
 		{
 			return rent;
 		}
-		
+		/**
+		 * This instance of landOnField, works by first, checking if the Field we are currently on, is owned by anyone.
+		 * If it isnt, then it starts the buyPropperty method.
+		 * If it is, it  makes the player just automaticly pay the rent. It doesnt check who the owner is,
+		 * because if the owner is yourself, value on your balance wont change.
+		 */
 		@Override
 		public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui, Shaker shake) 
 		{

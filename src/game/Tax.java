@@ -102,7 +102,12 @@ public class Tax implements Field {
 		{
 			return taxRate;
 		}
-		
+		/**
+		 * This instance of landOnField, works by first, checking if the tax rate is above 0.
+		 * If it is, it then ask the user to choose between paying the 10% tax or 4000.
+		 * If it comes back with the 4000, it deducts the taxAmount.
+		 * If it comes back with the 10%, it deducts taxRate.
+		 */ 
 	@Override
 	public void landOnField(GameBoard game, int boardValue, int playersTurn, MUI mui, Shaker shake) {
 		if(((Tax)game.boardFields.get(boardValue)).getTaxRate() > 0)

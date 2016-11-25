@@ -87,8 +87,8 @@ public class LaborCamp extends Ownable {
 		}
 	/**
 	 * This instance of landOnField, works by first, checking if the Field we are currently on, is owned by anyone.
-	 * If it is, then it starts the buyPropperty method.
-	 * If not, it checks, if the owner is not the player currently taking their turn.
+	 * If it isnt, then it starts the buyPropperty method.
+	 * If it is, it checks, if the owner is not the player currently taking their turn.
 	 * If that check comes back true, it start with:
 	 * Having the player roll the dies.
 	 * Afterwards it checks how many LaborCamp fields the owner of this field owns.
