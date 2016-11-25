@@ -18,7 +18,7 @@ public class Fleet extends Ownable{
 	 * @param player Number The number (integer) of the player who owns the field
 	 * @param cost The buy price of the field
 	 */
-	Fleet(String title, String description, String subText, String picture, Color color, int playerNumber, int cost) {
+	public Fleet(String title, String description, String subText, String picture, Color color, int playerNumber, int cost) {
 		super(title, description, subText, picture, color, playerNumber, cost);
 	}
 
