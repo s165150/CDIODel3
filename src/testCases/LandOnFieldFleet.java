@@ -26,6 +26,10 @@ public class LandOnFieldFleet {
 		game.getPlayerlistArray().add(player);
 		this.fleet0 = new Fleet("1. Fleet", "Fleet 0", null, null, null, 1, 0);
 		game.getBoardFieldsArray().add(fleet0);
+		this.fleet1 = new Fleet("2. Fleet", "Fleet 1", null, null, null, 1, 0);
+		game.getBoardFieldsArray().add(fleet1);
+		this.fleet4 = new Fleet("3. Fleet", "Fleet 4", null, null, null, 1, 0);
+		game.getBoardFieldsArray().add(fleet4);
 
 		}
 	
@@ -93,6 +97,98 @@ public class LandOnFieldFleet {
 	this.player.getAccount().addBalance(((Fleet)fleet0).getRent());
 
 	expected = 1000;
+
+	actual = this.player.getAccount().getBalance();
+
+	Assert.assertEquals(expected, actual);
+
+	}
+	
+	@Test
+
+	public void testLandOnField1() {
+
+	int expected = 1000;
+
+	int actual = this.player.getAccount().getBalance();
+
+	Assert.assertEquals(expected, actual);
+	//Perform the action to be tested
+
+	int ownedFleets = 1;
+	((Fleet)fleet1).getRentTest(ownedFleets);
+	this.player.getAccount().addBalance(((Fleet)fleet1).getRentTest(ownedFleets));
+
+	expected = 1500;
+
+	actual = this.player.getAccount().getBalance();
+
+	Assert.assertEquals(expected, actual);
+
+	}
+	
+	@Test
+
+	public void testLandOnField1Twice() {
+
+	int expected = 1000;
+
+	int actual = this.player.getAccount().getBalance();
+
+	Assert.assertEquals(expected, actual);
+	//Perform the action to be tested
+
+	int ownedFleets = 1;
+	((Fleet)fleet1).getRentTest(ownedFleets);
+	this.player.getAccount().addBalance(((Fleet)fleet1).getRentTest(ownedFleets));
+	this.player.getAccount().addBalance(((Fleet)fleet1).getRentTest(ownedFleets));
+	expected = 2000;
+
+	actual = this.player.getAccount().getBalance();
+
+	Assert.assertEquals(expected, actual);
+
+	}
+	
+	@Test
+
+	public void testLandOnField4() {
+
+	int expected = 1000;
+
+	int actual = this.player.getAccount().getBalance();
+
+	Assert.assertEquals(expected, actual);
+	//Perform the action to be tested
+
+	int ownedFleets = 4;
+	((Fleet)fleet4).getRentTest(ownedFleets);
+	this.player.getAccount().addBalance(((Fleet)fleet4).getRentTest(ownedFleets));
+
+	expected = 5000;
+
+	actual = this.player.getAccount().getBalance();
+
+	Assert.assertEquals(expected, actual);
+
+	}
+	
+	@Test
+
+	public void testLandOnField4Twice() {
+
+	int expected = 1000;
+
+	int actual = this.player.getAccount().getBalance();
+
+	Assert.assertEquals(expected, actual);
+	//Perform the action to be tested
+
+	int ownedFleets = 4;
+	((Fleet)fleet4).getRentTest(ownedFleets);
+	this.player.getAccount().addBalance(((Fleet)fleet4).getRentTest(ownedFleets));
+	this.player.getAccount().addBalance(((Fleet)fleet4).getRentTest(ownedFleets));
+	expected = 9000;
 
 	actual = this.player.getAccount().getBalance();
 

@@ -98,6 +98,22 @@ public class Fleet extends Ownable{
 			}
 			return rent;
 		}
+		public int getRentTest(int ownedFleetTest)
+		{
+			int rent = 0;
+			switch(ownedFleetTest)
+			{
+			case 1: rent = RENT_1;
+			break;
+			case 2: rent = RENT_2;
+			break;
+			case 3: rent = RENT_3;
+			break;
+			case 4: rent = RENT_4;
+			break;
+			}
+			return rent;
+		}
 		/**
 		 * This instance of landOnField, works by first, checking if the Field we are currently on, is owned by anyone.
 		 * If it isnt, then it starts the buyPropperty method,
