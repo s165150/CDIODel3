@@ -81,7 +81,7 @@ public class Territory extends Ownable {
 		{
 			return bgColor;
 		}
-		@Override
+		@Override 
 		int getRent() 
 		{
 			return rent;

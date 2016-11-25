@@ -20,7 +20,7 @@ public class Die {
 	/**
 	 * Sets the die to a random value between 1 and 6.
 	 */
-	void setRoll()
+	public void setRoll()
 	{
 		faceValue = (int)(Math.random() * MAX) + 1;
 	}

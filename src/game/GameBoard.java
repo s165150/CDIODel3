@@ -16,6 +16,7 @@ public class GameBoard {
 	protected ArrayList<Field> boardFields = new ArrayList<Field>();
 	private Text file = new Text("FieldInfo.txt");
 	private String[] textList = null;
+	private int numOfPlayers;
 	public void createGameBoard()
 	{
 		try {
@@ -52,8 +53,6 @@ public class GameBoard {
  * Creates the arraylist of the players in the game.
  */
 	ArrayList<Player> playerList = new ArrayList<Player>();
-
-	int numOfPlayers;
 	/**
 	 * Creates the playerlist array, depending on the size of the players in the game.
 	 * @param v User input used to define the number of players in the game.
