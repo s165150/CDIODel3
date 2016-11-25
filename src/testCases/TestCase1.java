@@ -22,15 +22,16 @@ public class TestCase1 {
 	//Precondition - Test case 1.1
 	@Before
 	public void setUp() throws Exception {
-		testPlayer1 = new Player ("testPlayer1", 1, 1, 0);
 		game.createGameBoard();
+		testPlayer1 = new Player ("testPlayer1", 1, 1, 0);
+		((Ownable)game.boardFields.get(2)).setOwner(10);
 		
 	}
 	
 	//Test - Test case 1.1
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		
 	}
 	
 	//Postcondation Test case 1.1

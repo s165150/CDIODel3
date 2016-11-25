@@ -35,7 +35,7 @@ public abstract class Ownable implements Field{
 	 	 * @param player Number The number (integer) of the player who owns the field
 	 	 * @param cost The buy price of the fieldt
 		 */
-		Ownable(String title, String description, String subText, String picture, Color color, int playerNumber, int cost)
+		public Ownable(String title, String description, String subText, String picture, Color color, int playerNumber, int cost)
 		{
 			fieldTitle = title;
 			fieldDescription = description;
@@ -49,7 +49,7 @@ public abstract class Ownable implements Field{
 			 * Sets the price for the field
 			 * @param amount
 			 */
-			void setprice(int amount)
+		public void setprice(int amount)
 			{
 				this.price = amount;
 			}
@@ -57,7 +57,7 @@ public abstract class Ownable implements Field{
 			 * Sets the owner for the field
 			 * @param amount
 			 */
-			void setOwner(int value)
+		public void setOwner(int value)
 			{
 				owner = value;
 			}
@@ -66,7 +66,7 @@ public abstract class Ownable implements Field{
 			 * Gets the price for the field
 			 * @param amount
 			 */
-			int getPrice()
+		public	int getPrice()
 			{
 				return price;
 			}
@@ -75,12 +75,12 @@ public abstract class Ownable implements Field{
 			 * Gets the owner for the field
 			 * @param amount
 			 */
-			int getOwner()
+		public	int getOwner()
 			{
 				return owner;
 			}
 			
-			void buyProperty(GameBoard game, MUI mui, int playersTurn, int boardValue)
+		public	void buyProperty(GameBoard game, MUI mui, int playersTurn, int boardValue)
 			{
 				try {
 					textList = file.OpenFile();
@@ -95,7 +95,7 @@ public abstract class Ownable implements Field{
 				}
 			}
 			
-			void payRent(int rent, GameBoard game, int playersTurn)
+		public	void payRent(int rent, GameBoard game, int playersTurn)
 			{
 				game.playerList.get(playersTurn).getAccount().addBalance(-rent);
 				game.playerList.get(getOwner()).getAccount().addBalance(rent);	
