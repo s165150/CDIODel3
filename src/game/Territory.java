@@ -18,7 +18,7 @@ public class Territory extends Ownable {
 	 * @param cost The buy price of the field
 	 * @param payamount The price of landing on the field if owned
 	 */
-	Territory(String title, String description, String subText, String picture, Color color, int playerNumber,
+	public Territory(String title, String description, String subText, String picture, Color color, int playerNumber,
 			int cost,int rent) 
 	{
 		super(title, description, subText, picture, color, playerNumber, cost);

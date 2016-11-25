@@ -19,6 +19,14 @@ public class Game {
 	private String[] textList = null;
 	
 	
+	public void createPlayers()
+	{
+		while(numOfPlayers < 2 || numOfPlayers > 6)
+		{
+			numOfPlayers = mui.getUserInt(textList[0]);
+		}
+		game.createPlayerList(numOfPlayers, mui);
+	}
 	public void startGame()
 	{
 		
@@ -29,11 +37,7 @@ public class Game {
 		} 
 	game.createGameBoard();
 	mui.createBoard(this.game);
-	while(numOfPlayers < 2 || numOfPlayers > 6)
-	{
-		numOfPlayers = mui.getUserInt(textList[0]);
-	}
-	game.createPlayerList(numOfPlayers, mui);
+	createPlayers();
 	playLoop();
 	}
 	

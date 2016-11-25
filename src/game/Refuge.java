@@ -21,7 +21,7 @@ public class Refuge implements Field{
 	 * @param color The background color of the field, is only shown if no/transparent picture is chosen
 	 * @param amount The fixed bonus to be earned
 	 */
-	Refuge(String title, String description, String subText, String picture, Color color,int amount)
+	public Refuge(String title, String description, String subText, String picture, Color color,int amount)
 	{
 		fieldTitle = title;
 		fieldDescription = description;
